@@ -1,30 +1,27 @@
-const passport = require('passport');
-const LocalStrategy = require('passport-local').Strategy;
-const User = require('./models/User');  // Ensure this path is correct
+const msal = require('@azure/msal-node');
 
-passport.use(new LocalStrategy(async (username, password, done) => {
+const msalConfig = {
+    auth: {
+        clientId: process.env.CLIENT_ID,
+        authority: `https://login.microsoftonline.com/${process.env.TENANT_ID}`,
+        clientSecret: process.env.CLIENT_SECRET,
+    },
+};
+
+const cca = new msal.ConfidentialClientApplication(msalConfig);
+
+const getAuthToken = async () => {
     try {
-        const user = await User.findOne({ username });
-        if (!user) return done(null, false, { message: 'Incorrect username' });
-        const isMatch = await user.comparePassword(password);
-        if (!isMatch) return done(null, false, { message: 'Incorrect password' });
-        return done(null, user);
+        const authResult = await cca.acquireTokenByClientCredential({
+            scopes: ['https://graph.microsoft.com/.default'],
+        });
+        return authResult.accessToken;
     } catch (error) {
-        return done(error);
+        console.error('Error acquiring token:', error);
+        throw error;
     }
-}));
+};
 
-passport.serializeUser((user, done) => {
-    done(null, user.id);
-});
-
-passport.deserializeUser(async (id, done) => {
-    try {
-        const user = await User.findById(id);
-        done(null, user);
-    } catch (error) {
-        done(error);
-    }
-});
-
-module.exports = passport;
+module.exports = {
+    getAuthToken,
+};

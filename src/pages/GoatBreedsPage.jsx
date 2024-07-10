@@ -1,5 +1,5 @@
 import React from 'react';
-import GoatBreedsDropdown from '../GoatBreedsDropdown'; // Adjust the path as necessary
+import GoatBreedsDropdown from '../components/GoatBreedsDropdown';
 
 const GoatBreedsPage = () => {
     return (

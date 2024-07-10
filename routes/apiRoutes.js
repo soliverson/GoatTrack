@@ -7,7 +7,8 @@ router.get('/breeds', async (req, res) => {
         const breeds = await fetchBreedInformation();
         res.json(breeds);
     } catch (error) {
-        res.status(500).json({ message: 'Error fetching breed information' });
+        console.error('Error in /breeds route:', error.response ? error.response.data : error.message);
+        res.status(500).json({ message: 'Error fetching breed information', error: error.response ? error.response.data : error.message });
     }
 });
 

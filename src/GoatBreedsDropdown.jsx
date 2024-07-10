@@ -13,7 +13,7 @@ const GoatBreedsDropdown = () => {
                 setBreeds(response.data);
                 setLoading(false);
             } catch (error) {
-                setError('Error fetching breed information');
+                setError(error.response ? error.response.data.message : 'Error fetching breed information');
                 setLoading(false);
             }
         };
