@@ -1,53 +1,36 @@
 import React from 'react';
+import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
+import HomePage from './pages/HomePage';
+import GoatBreedsPage from './pages/GoatBreedsPage';
+// Import other pages as necessary
 
 const App = () => {
   return (
-    <div>
-      <header>
-        <nav>
-          <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#breeds">Goat Breeds</a></li>
-            <li><a href="#management">Goat Management</a></li>
-            <li><a href="#forum">Forum</a></li>
-            <li><a href="#profile">Profile</a></li>
-          </ul>
-        </nav>
-      </header>
-      <main>
-        <section id="home">
-          <h1>Welcome to GoatTrack</h1>
-          <p>Your one-stop resource for all things goat-related.</p>
-        </section>
-        <section id="breeds">
-          <h2>Goat Breeds</h2>
-          <div id="breed-list">
-            {/* Dynamic content will be loaded here */}
-          </div>
-        </section>
-        <section id="management">
-          <h2>Goat Management</h2>
-          <div id="goat-management">
-            {/* Dynamic content will be loaded here */}
-          </div>
-        </section>
-        <section id="forum">
-          <h2>Community Forum</h2>
-          <div id="forum-content">
-            {/* Dynamic content will be loaded here */}
-          </div>
-        </section>
-        <section id="profile">
-          <h2>User Profile</h2>
-          <div id="user-profile">
-            {/* Dynamic content will be loaded here */}
-          </div>
-        </section>
-      </main>
-      <footer>
-        <p>&copy; 2024 GoatTrack. All rights reserved.</p>
-      </footer>
-    </div>
+    <Router>
+      <div>
+        <header>
+          <nav>
+            <ul>
+              <li><Link to="/">Home</Link></li>
+              <li><Link to="/breeds">Goat Breeds</Link></li>
+              <li><Link to="/management">Goat Management</Link></li>
+              <li><Link to="/forum">Forum</Link></li>
+              <li><Link to="/profile">Profile</Link></li>
+            </ul>
+          </nav>
+        </header>
+        <main>
+          <Switch>
+            <Route path="/" exact component={HomePage} />
+            <Route path="/breeds" component={GoatBreedsPage} />
+            {/* Add other routes as necessary */}
+          </Switch>
+        </main>
+        <footer>
+          <p>&copy; 2024 GoatTrack. All rights reserved.</p>
+        </footer>
+      </div>
+    </Router>
   );
 };
 

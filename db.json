@@ -1,0 +1,15 @@
+{
+    "goatBreeds": [
+      {
+        "id": 1,
+        "name": "Nubian",
+        "description": "The Nubian is a large, proud, and graceful dairy goat of Oriental origin."
+      },
+      {
+        "id": 2,
+        "name": "Alpine",
+        "description": "Alpines are a medium to large sized breed of domestic goat known for its very good milking ability."
+      }
+    ]
+  }
+  
