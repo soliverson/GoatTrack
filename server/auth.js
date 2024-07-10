@@ -1,10 +1,17 @@
 const msal = require('@azure/msal-node');
+require('dotenv').config();
+
+console.log('Loaded Environment Variables in auth.js:');
+console.log('CLIENT_ID:', process.env.CLIENT_ID);
+console.log('AUTH_URL:', process.env.AUTH_URL);
+console.log('CLIENT_PRIMARY_SECRET:', process.env.CLIENT_PRIMARY_SECRET);
+console.log('CLIENT_SECONDARY_SECRET:', process.env.CLIENT_SECONDARY_SECRET);
 
 const msalConfig = {
     auth: {
         clientId: process.env.CLIENT_ID,
-        authority: `https://login.microsoftonline.com/${process.env.TENANT_ID}`,
-        clientSecret: process.env.CLIENT_SECRET,
+        authority: process.env.AUTH_URL,
+        clientSecret: process.env.CLIENT_PRIMARY_SECRET, // Use the primary secret
     },
 };
 

@@ -1,4 +1,4 @@
-const User = require('../models/User');  // Correct relative path to User model
+const User = require('../models/User');  // Corrected path
 const passport = require('passport');
 
 exports.register = async (req, res) => {
