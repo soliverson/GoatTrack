@@ -1,12 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GoatTrack</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GoatTrack</title>
+  <link rel="stylesheet" href="/styles.css">
 </head>
 <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
+  <header>
+    <h1>GoatTrack</h1>
+  </header>
+  <nav>
+    <ul>
+      <li><Link to="/">Home</Link></li>
+      <li><Link to="/goat-profile">Goat Profile</Link></li>
+      <li><Link to="/community-forum">Community Forum</Link></li>
+    </ul>
+  </nav>
+  <main>
+    <!-- Main content here -->
+  </main>
+  <footer>
+    <p>&copy; 2024 GoatTrack</p>
+  </footer>
+  <script type="module" src="/src/main.jsx"></script>
 </body>
 </html>
