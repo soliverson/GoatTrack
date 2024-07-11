@@ -7,7 +7,9 @@
     "start": "node server/app.js",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
     "server": "nodemon server/app.js",
-    "client": "cd client && npm run dev"
+    "client": "cd client && npm run dev",
+    "build": "cd client && npm run build",
+    "serve": "cd client && npm run serve"
   },
   "dependencies": {
     "@azure/msal-node": "^2.10.0",
@@ -20,9 +22,13 @@
     "mongoose": "^8.5.0",
     "passport": "^0.4.1",
     "passport-local": "^1.0.0",
-    "react-router-dom": "^6.24.1"
+    "react-router-dom": "^6.24.1",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
   },
   "devDependencies": {
-    "nodemon": "^3.1.4"
+    "nodemon": "^3.1.4",
+    "vite": "^2.0.0",
+    "@vitejs/plugin-react": "^1.0.0"
   }
 }
