@@ -1,9 +1,79 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
 
 function CommunityForum() {
+    const [posts, setPosts] = useState([]);
+    const [newPost, setNewPost] = useState({ author: '', title: '', content: '' });
+    const [newReply, setNewReply] = useState({ author: '', content: '' });
+    const [replyingTo, setReplyingTo] = useState(null);
+
+    useEffect(() => {
+        axios.get('/api/forum/posts')
+            .then(response => setPosts(response.data))
+            .catch(error => console.error(error));
+    }, []);
+
+    const handlePostChange = (e) => {
+        const { name, value } = e.target;
+        setNewPost(prevState => ({ ...prevState, [name]: value }));
+    };
+
+    const handlePostSubmit = (e) => {
+        e.preventDefault();
+        axios.post('/api/forum/posts', newPost)
+            .then(response => setPosts(prevPosts => [...prevPosts, response.data]))
+            .catch(error => console.error(error));
+    };
+
+    const handleReplyChange = (e) => {
+        const { name, value } = e.target;
+        setNewReply(prevState => ({ ...prevState, [name]: value }));
+    };
+
+    const handleReplySubmit = (postId) => {
+        axios.post(`/api/forum/posts/${postId}/replies`, newReply)
+            .then(response => {
+                setPosts(posts.map(post => post._id === postId ? response.data : post));
+                setReplyingTo(null);
+                setNewReply({ author: '', content: '' });
+            })
+            .catch(error => console.error(error));
+    };
+
     return (
-        <div>
+        <div className="content">
             <h1>Community Forum</h1>
+            <form onSubmit={handlePostSubmit}>
+                <input type="text" name="author" value={newPost.author} onChange={handlePostChange} placeholder="Author" required />
+                <input type="text" name="title" value={newPost.title} onChange={handlePostChange} placeholder="Title" required />
+                <textarea name="content" value={newPost.content} onChange={handlePostChange} placeholder="Content" required></textarea>
+                <button type="submit">Post</button>
+            </form>
+            <ul>
+                {posts.map(post => (
+                    <li key={post._id}>
+                        <h2>{post.title}</h2>
+                        <h3>{post.author}</h3>
+                        <p>{post.content}</p>
+                        <button onClick={() => setReplyingTo(post._id)}>Reply</button>
+                        {replyingTo === post._id && (
+                            <form onSubmit={(e) => { e.preventDefault(); handleReplySubmit(post._id); }}>
+                                <input type="text" name="author" value={newReply.author} onChange={handleReplyChange} placeholder="Author" required />
+                                <textarea name="content" value={newReply.content} onChange={handleReplyChange} placeholder="Reply content" required></textarea>
+                                <button type="submit">Reply</button>
+                            </form>
+                        )}
+                        <ul>
+                            {post.replies.map((reply, index) => (
+                                <li key={index}>
+                                    <h4>{reply.author}</h4>
+                                    <p>{reply.content}</p>
+                                </li>
+                            ))}
+                        </ul>
+                    </li>
+                ))}
+            </ul>
         </div>
     );
 }

@@ -8,11 +8,11 @@ const path = require('path');
 const authRoutes = require('./routes/authRoutes');
 const apiRoutes = require('./routes/apiRoutes');
 const goatRoutes = require('./routes/goatRoutes');
+const forumRoutes = require('./routes/forumRoutes');
 
 const app = express();
 const PORT = process.env.PORT || 3001;
 
-// Debugging environment variables
 console.log('Loaded Environment Variables:');
 console.log('MONGO_URI:', process.env.MONGO_URI);
 console.log('SESSION_SECRET:', process.env.SESSION_SECRET);
@@ -37,6 +37,7 @@ app.use(passport.session());
 app.use('/auth', authRoutes);
 app.use('/api', apiRoutes);
 app.use('/goats', goatRoutes);
+app.use('/api/forum', forumRoutes);
 
 if (process.env.NODE_ENV === 'production') {
     app.use(express.static(path.join(__dirname, 'client', 'dist')));
@@ -45,7 +46,6 @@ if (process.env.NODE_ENV === 'production') {
     });
 }
 
-// Connect to MongoDB
 mongoose.connect(process.env.MONGO_URI)
     .then(() => app.listen(PORT, () => console.log(`Server running on port ${PORT}`)))
     .catch(err => console.error('Mongoose connection error:', err));

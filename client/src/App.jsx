@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 import Home from './components/Home';
 import GoatProfile from './components/GoatProfile';
 import CommunityForum from './components/CommunityForum';
-import GoatBreeds from './components/GoatBreeds'; // Import the new component
+import GoatBreeds from './components/GoatBreeds';
 
 function App() {
   return (
@@ -15,7 +15,7 @@ function App() {
             <li><Link to="/">Home</Link></li>
             <li><Link to="/goat-profile">Goat Profile</Link></li>
             <li><Link to="/community-forum">Community Forum</Link></li>
-            <li><Link to="/goat-breeds">Goat Breeds</Link></li> {/* Add new link */}
+            <li><Link to="/goat-breeds">Goat Breeds</Link></li>
           </ul>
         </nav>
       </header>
@@ -24,7 +24,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/goat-profile" element={<GoatProfile />} />
           <Route path="/community-forum" element={<CommunityForum />} />
-          <Route path="/goat-breeds" element={<GoatBreeds />} /> {/* Add new route */}
+          <Route path="/goat-breeds" element={<GoatBreeds />} />
         </Routes>
       </main>
       <footer>
