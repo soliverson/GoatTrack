@@ -1,24 +1,16 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Home from './components/Home';
 import GoatProfile from './components/GoatProfile';
 import CommunityForum from './components/CommunityForum';
 import GoatBreeds from './components/GoatBreeds';
+import Header from './components/Header';
+import './App.css'; // Ensure you have a CSS file for the app styles
 
-function App() {
+const App = () => {
   return (
     <Router>
-      <header>
-        <h1>GoatTrack</h1>
-        <nav>
-          <ul>
-            <li><Link to="/">Home</Link></li>
-            <li><Link to="/goat-profile">Goat Profile</Link></li>
-            <li><Link to="/community-forum">Community Forum</Link></li>
-            <li><Link to="/goat-breeds">Goat Breeds</Link></li>
-          </ul>
-        </nav>
-      </header>
+      <Header />
       <main>
         <Routes>
           <Route path="/" element={<Home />} />
