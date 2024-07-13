@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
-import '../styles.css';
+import React, { useState, useEffect } from "react";
+import axios from "axios";
+// import "../styles.css"; // Remove this line
 
 const GoatBreeds = () => {
     const [breeds, setBreeds] = useState([]);
