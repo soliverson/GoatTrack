@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 
-function CommunityForum() {
+const CommunityForum = () => {
     const [posts, setPosts] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
@@ -67,7 +67,10 @@ function CommunityForum() {
 
     return (
         <div className="content">
-            <h1>Community Forum</h1>
+            <h1>Welcome to the Goat Community Forum</h1>
+            <p>
+                The Goat Community Forum page serves as a community platform for goat owners, breeders, and enthusiasts to share knowledge, ask questions, and discuss various topics related to goat care and management. Users can post new topics, reply to existing discussions, and engage with experts and fellow community members. This interactive space fosters a supportive environment for sharing experiences, tips, and advice on all aspects of goat keeping.
+            </p>
             <form onSubmit={handlePostSubmit}>
                 <input type="text" name="author" value={newPost.author} onChange={handlePostChange} placeholder="Author" required />
                 <input type="text" name="title" value={newPost.title} onChange={handlePostChange} placeholder="Title" required />
@@ -101,6 +104,6 @@ function CommunityForum() {
             </ul>
         </div>
     );
-}
+};
 
 export default CommunityForum;
