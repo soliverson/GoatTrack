@@ -7,8 +7,8 @@ export default defineConfig({
   build: {
     outDir: 'dist',
     rollupOptions: {
-      external: ['styles.css']
-    }
+      external: ['/client/src/styles.css'], // Adjust the path to match your project structure
+    },
   },
   server: {
     port: 3000,
