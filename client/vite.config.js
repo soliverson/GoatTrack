@@ -6,6 +6,9 @@ export default defineConfig({
   base: '/', // Ensure this is set correctly
   build: {
     outDir: 'dist',
+    rollupOptions: {
+      external: ['styles.css']
+    }
   },
   server: {
     port: 3000,
