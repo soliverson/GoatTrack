@@ -1,44 +1,43 @@
-import React, { useEffect, useState } from 'react';
-import { fetchGoatBreeds } from '../api';
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
+import '../styles.css';
 
-function GoatBreeds() {
-    const [goatBreeds, setGoatBreeds] = useState([]);
+const GoatBreeds = () => {
+    const [breeds, setBreeds] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
 
     useEffect(() => {
-        const getGoatBreeds = async () => {
+        const fetchBreeds = async () => {
             try {
-                const data = await fetchGoatBreeds();
-                setGoatBreeds(data);
+                const response = await axios.get('/api/breeds');
+                setBreeds(response.data);
+                setLoading(false);
             } catch (error) {
-                setError(error.message);
-            } finally {
+                setError(error.response ? error.response.data.message : 'Error fetching breed information');
                 setLoading(false);
             }
         };
 
-        getGoatBreeds();
+        fetchBreeds();
     }, []);
 
     if (loading) {
-        return <p>Loading...</p>;
+        return <div>Loading...</div>;
     }
 
     if (error) {
-        return <p>Error fetching goat breeds: {error}</p>;
+        return <div>{error}</div>;
     }
 
     return (
-        <div className="content">
-            <h1>Goat Breeds</h1>
-            <ul>
-                {goatBreeds.map((breed, index) => (
-                    <li key={index}>{breed.name}</li>
-                ))}
-            </ul>
-        </div>
+        <select className="large-select">
+            <option value="">Select a breed</option>
+            {breeds.map(breed => (
+                <option key={breed.id} value={breed.name}>{breed.name}</option>
+            ))}
+        </select>
     );
-}
+};
 
 export default GoatBreeds;

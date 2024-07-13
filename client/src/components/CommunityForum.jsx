@@ -3,14 +3,31 @@ import axios from 'axios';
 
 function CommunityForum() {
     const [posts, setPosts] = useState([]);
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(null);
     const [newPost, setNewPost] = useState({ author: '', title: '', content: '' });
     const [newReply, setNewReply] = useState({ author: '', content: '' });
     const [replyingTo, setReplyingTo] = useState(null);
 
     useEffect(() => {
-        axios.get('/api/forum/posts')
-            .then(response => setPosts(response.data))
-            .catch(error => console.error(error));
+        let isMounted = true; // Flag to prevent state updates after unmounting
+        axios.get('https://goattrack.net/api/forum/posts') // Update this URL if needed
+            .then(response => {
+                if (isMounted) {
+                    setPosts(response.data);
+                    setLoading(false);
+                }
+            })
+            .catch(error => {
+                if (isMounted) {
+                    setError(error.response ? error.response.data.message : 'Error fetching posts');
+                    setLoading(false);
+                }
+            });
+
+        return () => {
+            isMounted = false; // Clean up to avoid memory leaks
+        };
     }, []);
 
     const handlePostChange = (e) => {
@@ -20,7 +37,7 @@ function CommunityForum() {
 
     const handlePostSubmit = (e) => {
         e.preventDefault();
-        axios.post('/api/forum/posts', newPost)
+        axios.post('https://goattrack.net/api/forum/posts', newPost) // Update this URL if needed
             .then(response => setPosts(prevPosts => [...prevPosts, response.data]))
             .catch(error => console.error(error));
     };
@@ -31,7 +48,7 @@ function CommunityForum() {
     };
 
     const handleReplySubmit = (postId) => {
-        axios.post(`/api/forum/posts/${postId}/replies`, newReply)
+        axios.post(`https://goattrack.net/api/forum/posts/${postId}/replies`, newReply) // Update this URL if needed
             .then(response => {
                 setPosts(posts.map(post => post._id === postId ? response.data : post));
                 setReplyingTo(null);
@@ -39,6 +56,14 @@ function CommunityForum() {
             })
             .catch(error => console.error(error));
     };
+
+    if (loading) {
+        return <div>Loading...</div>;
+    }
+
+    if (error) {
+        return <div>Error: {error}</div>;
+    }
 
     return (
         <div className="content">
