@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import './styles.css';
-import goat1 from '../images/goat1.jpg';
-import goat2 from '../images/goat2.jpg';
-import goat3 from '../images/goat3.jpg';
-import goat4 from '../images/goat4.jpg';
+import '/dist/styles.css';
+import goat1 from '/public/images/goatfence.webp';
+import goat2 from '/public/images/goatsierra.webp';
+import goat3 from '/public/images/lamancha.webp';
+import goat4 from '/public/images/lamancha2.webp';
 
 const Home = () => {
     const images1 = [goat1, goat2];
