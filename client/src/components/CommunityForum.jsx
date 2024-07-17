@@ -14,9 +14,9 @@ const CommunityForum = () => {
 
         const fetchPosts = async () => {
             try {
-                const response = await axios.get('https://goattrack.net/api/forum/posts'); // Update this URL if needed
+                const response = await axios.get('/api/forum/posts'); // Use the proxy path
                 if (isMounted) {
-                    setPosts(response.data);
+                    setPosts(Array.isArray(response.data) ? response.data : []);
                     setLoading(false);
                 }
             } catch (error) {
@@ -42,7 +42,7 @@ const CommunityForum = () => {
     const handlePostSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await axios.post('https://goattrack.net/api/forum/posts', newPost); // Update this URL if needed
+            const response = await axios.post('/api/forum/posts', newPost); // Use the proxy path
             setPosts(prevPosts => [...prevPosts, response.data]);
             setNewPost({ author: '', title: '', content: '' });
         } catch (error) {
@@ -57,7 +57,7 @@ const CommunityForum = () => {
 
     const handleReplySubmit = async (postId) => {
         try {
-            const response = await axios.post(`https://goattrack.net/api/forum/posts/${postId}/replies`, newReply); // Update this URL if needed
+            const response = await axios.post(`/api/forum/posts/${postId}/replies`, newReply); // Use the proxy path
             setPosts(posts.map(post => post._id === postId ? response.data : post));
             setReplyingTo(null);
             setNewReply({ author: '', content: '' });
@@ -87,7 +87,7 @@ const CommunityForum = () => {
                 <button type="submit">Post</button>
             </form>
             <ul>
-                {posts.map(post => (
+                {Array.isArray(posts) && posts.map(post => (
                     <li key={post._id}>
                         <h2>{post.title}</h2>
                         <h3>{post.author}</h3>
@@ -101,7 +101,7 @@ const CommunityForum = () => {
                             </form>
                         )}
                         <ul>
-                            {post.replies.map((reply, index) => (
+                            {post.replies && post.replies.map((reply, index) => (
                                 <li key={index}>
                                     <h4>{reply.author}</h4>
                                     <p>{reply.content}</p>
