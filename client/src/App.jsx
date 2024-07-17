@@ -5,7 +5,7 @@ import GoatProfile from './components/GoatProfile';
 import CommunityForum from './components/CommunityForum';
 import GoatData from './components/GoatData';
 import Header from './components/Header';
-import '/dist/styles.css'; // Use relative path
+import './styles.css'; // Correct relative path
 
 const App = () => {
   return (

@@ -1,13 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import '/dist/styles.css';
-import goat1 from '/public/images/goatfence.webp';
-import goat2 from '/public/images/goatsierra.webp';
-import goat3 from '/public/images/lamancha.webp';
-import goat4 from '/public/images/lamancha2.webp';
+import '../styles.css'; // Correct relative path
 
 const Home = () => {
-    const images1 = [goat1, goat2];
-    const images2 = [goat3, goat4];
+    const images1 = ['/images/goatfence.webp', '/images/goatsierra.webp'];
+    const images2 = ['/images/lamancha.webp', '/images/lamancha2.webp'];
 
     const [currentImageIndex1, setCurrentImageIndex1] = useState(0);
     const [currentImageIndex2, setCurrentImageIndex2] = useState(0);
