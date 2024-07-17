@@ -1,4 +1,4 @@
-/* General styles */
+/* Ensure the body takes the full height of the screen */
 html, body {
   height: 100%;
   margin: 0;
@@ -85,12 +85,12 @@ nav a:hover {
   }
 
   nav ul {
+    display: none; /* Hide menu by default */
     flex-direction: column;
     align-items: center;
-    display: none; /* Hide menu by default */
   }
 
-  nav ul.active {
+  nav.active ul {
     display: flex; /* Show menu when active */
   }
 }
