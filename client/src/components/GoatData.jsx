@@ -109,7 +109,7 @@ const GoatData = () => {
 
                 {!loading && !error && selectedState && filteredData.length > 0 && (
                     <>
-                        <h2>Data for {selectedType.charAt(0).toUpperCase() + selectedType.slice(1)} in {selectedState}</h2>
+                        <h2>Data for {selectedType.charAt(0).toUpperCase() + selectedType.slice(1)} Goats in {selectedState}</h2>
                         <table className="goat-data-table">
                             <thead>
                                 <tr>

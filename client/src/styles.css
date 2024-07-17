@@ -236,3 +236,28 @@ form button:hover {
 h2 {
   margin-top: 20px;
 }
+
+/* Table Styles */
+.goat-data-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.goat-data-table th, .goat-data-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+.goat-data-table th {
+  background-color: #f2f2f2;
+}
+
+.goat-data-table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.goat-data-table tr:hover {
+  background-color: #ddd;
+}
