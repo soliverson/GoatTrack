@@ -1,185 +1,256 @@
 /* Ensure the body takes the full height of the screen */
 html, body {
-    height: 100%;
-    margin: 0;
-    padding: 0;
-    font-family: 'Open Sans', sans-serif;
-  }
-  
-  body {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-  }
-  
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: 'Open Sans', sans-serif;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+header {
+  background-color: #6B4226; /* Brown color for the header background */
+  color: white;
+  padding: 5px 0;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%; /* Ensure the header takes the full width */
+}
+
+header .logo {
+  max-width: 100%; /* Ensure the logo fits within the header */
+  height: auto;
+  margin-bottom: -5px;
+}
+
+nav {
+  width: 100%; /* Make the nav take up the full width of the header */
+  background-color: #FFD700; /* Gold background for the links */
+  display: flex;
+  justify-content: center; /* Center the nav items */
+  margin-top: -5px; /* Adjust the top margin to move the nav closer to the logo */
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  width: 100%; /* Make the ul take up the full width of the nav */
+  justify-content: space-around; /* Distribute space evenly between nav items */
+}
+
+nav li {
+  margin: 0;
+  flex-grow: 1; /* Allow the li to grow to fill available space */
+  text-align: center; /* Center the text within the li */
+}
+
+nav a {
+  text-decoration: none;
+  color: #6B4226; /* Brown color for the link text */
+  font-weight: bold; /* Make the links bold */
+  transition: color 0.3s; /* Only transition color */
+  padding: 10px 15px; /* Add padding around the links */
+  display: block; /* Ensure the link takes up the full area */
+  height: 100%; /* Make the link take up the full height of the nav */
+}
+
+nav a:hover {
+  color: #e6be00; /* Change color on hover */
+  background-color: #ffe700; /* Slightly different gold on hover */
+}
+
+main {
+  background-color: #f5f5f5; /* Light grey background color for the main content */
+  flex: 1;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  width: 100%; /* Ensure the main content takes the full width */
+  box-sizing: border-box; /* Ensure padding is included in the width calculation */
+}
+
+.content {
+  max-width: 1200px; /* Set a max-width for the content area */
+  width: 100%;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  border-radius: 8px;
+}
+
+form {
+  margin-bottom: 20px;
+}
+
+form input, form textarea {
+  display: block;
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+form button {
+  padding: 10px 20px;
+  background-color: #6B4226;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+form button:hover {
+  background-color: #5a371e;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  margin-bottom: 5px;
+  padding: 15px;
+}
+
+li h2 {
+  margin: 0 0 5px; /* Reduced margin for better spacing */
+  font-size: 1.5em;
+}
+
+li h3 {
+  margin: 0 0 10px;
+  font-size: 1.2em;
+  color: #6B4226; /* Brown color for author */
+}
+
+li p {
+  margin: 0 0 10px;
+}
+
+li button {
+  margin-top: 10px;
+  padding: 5px 10px;
+  background-color: #FFD700;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+li button:hover {
+  background-color: #e6be00;
+}
+
+li ul {
+  margin-top: 10px;
+  padding-left: 20px;
+}
+
+li ul li {
+  padding: 10px;
+  border: 1px solid #eee;
+  border-radius: 4px;
+}
+
+li ul li h4 {
+  margin: 0 0 5px;
+}
+
+.large-select {
+  width: 300px; 
+  height: 50px; 
+  font-size: 16px; 
+  padding: 5px; 
+  border-radius: 4px; 
+  border: 1px solid #ccc; 
+}
+
+footer {
+  background-color: #6B4226; /* Brown color for the footer background */
+  color: white;
+  text-align: center;
+  padding: 10px 0;
+  width: 100%; /* Ensure the footer takes the full width */
+}
+
+/* Media queries for responsive design */
+@media (max-width: 768px) {
   header {
-    background-color: #6B4226; /* Brown color for the header background */
-    color: white;
-    padding: 5px 0;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 100%; /* Ensure the header takes the full width */
+      padding: 10px 0;
   }
-  
-  header .logo {
-    max-width: 100%; /* Ensure the logo fits within the header */
-    height: auto;
-    margin-bottom: -5px;
-  }
-  
-  nav {
-    width: 100%; /* Make the nav take up the full width of the header */
-    background-color: #FFD700; /* Gold background for the links */
-    display: flex;
-    justify-content: center; /* Center the nav items */
-    margin-top: -5px; /* Adjust the top margin to move the nav closer to the logo */
-  }
-  
+
   nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    width: 100%; /* Make the ul take up the full width of the nav */
-    justify-content: space-around; /* Distribute space evenly between nav items */
+      flex-direction: column;
+      align-items: center;
   }
-  
+
   nav li {
-    margin: 0;
-    flex-grow: 1; /* Allow the li to grow to fill available space */
-    text-align: center; /* Center the text within the li */
+      margin: 5px 0;
   }
-  
+
   nav a {
-    text-decoration: none;
-    color: #6B4226; /* Brown color for the link text */
-    font-weight: bold; /* Make the links bold */
-    transition: color 0.3s; /* Only transition color */
-    padding: 10px 15px; /* Add padding around the links */
-    display: block; /* Ensure the link takes up the full area */
-    height: 100%; /* Make the link take up the full height of the nav */
+      padding: 10px;
+      width: 100%;
   }
-  
-  nav a:hover {
-    color: #e6be00; /* Change color on hover */
-    background-color: #ffe700; /* Slightly different gold on hover */
-  }
-  
-  main {
-    background-color: #f5f5f5; /* Light grey background color for the main content */
-    flex: 1;
-    padding: 20px;
-    display: flex;
-    justify-content: center;
-    width: 100%; /* Ensure the main content takes the full width */
-    box-sizing: border-box; /* Ensure padding is included in the width calculation */
-  }
-  
+
   .content {
-    max-width: 1200px; /* Set a max-width for the content area */
-    width: 100%;
-    padding: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    background-color: #fff;
-    border-radius: 8px;
+      padding: 10px;
   }
-  
-  form {
-    margin-bottom: 20px;
-  }
-  
+
   form input, form textarea {
-    display: block;
-    width: 100%;
-    margin-bottom: 10px;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+      padding: 8px;
   }
-  
+
   form button {
-    padding: 10px 20px;
-    background-color: #6B4226;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
+      padding: 8px 16px;
   }
-  
-  form button:hover {
-    background-color: #5a371e;
-  }
-  
-  ul {
-    list-style: none;
-    padding: 0;
-  }
-  
-  li {
-    margin-bottom: 5px;
-    padding: 15px;
-  }
-  
-  li h2 {
-    margin: 0 0 5px; /* Reduced margin for better spacing */
-    font-size: 1.5em;
-  }
-  
-  li h3 {
-    margin: 0 0 10px;
-    font-size: 1.2em;
-    color: #6B4226; /* Brown color for author */
-  }
-  
-  li p {
-    margin: 0 0 10px;
-  }
-  
-  li button {
-    margin-top: 10px;
-    padding: 5px 10px;
-    background-color: #FFD700;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-  }
-  
-  li button:hover {
-    background-color: #e6be00;
-  }
-  
-  li ul {
-    margin-top: 10px;
-    padding-left: 20px;
-  }
-  
-  li ul li {
-    padding: 10px;
-    border: 1px solid #eee;
-    border-radius: 4px;
-  }
-  
-  li ul li h4 {
-    margin: 0 0 5px;
-  }
-  
+
   .large-select {
-    width: 300px; 
-    height: 50px; 
-    font-size: 16px; 
-    padding: 5px; 
-    border-radius: 4px; 
-    border: 1px solid #ccc; 
+      width: 100%;
   }
-  
-  footer {
-    background-color: #6B4226; /* Brown color for the footer background */
-    color: white;
-    text-align: center;
-    padding: 10px 0;
-    width: 100%; /* Ensure the footer takes the full width */
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  header {
+      padding: 8px 0;
   }
-  
+
+  nav ul {
+      flex-direction: row;
+      justify-content: space-around;
+  }
+
+  nav li {
+      margin: 0 10px;
+  }
+
+  nav a {
+      padding: 8px 12px;
+  }
+
+  .content {
+      padding: 15px;
+  }
+
+  form input, form textarea {
+      padding: 8px;
+  }
+
+  form button {
+      padding: 8px 16px;
+  }
+
+  .large-select {
+      width: 80%;
+  }
+}
