@@ -1,4 +1,4 @@
-/* Ensure the body takes the full height of the screen */
+/* General styles */
 html, body {
   height: 100%;
   margin: 0;
@@ -28,6 +28,16 @@ header .logo {
   max-width: 100%; /* Ensure the logo fits within the header */
   height: auto;
   margin-bottom: -5px;
+}
+
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: #FFD700;
+  padding: 10px;
 }
 
 nav {
@@ -66,6 +76,23 @@ nav a {
 nav a:hover {
   color: #e6be00; /* Change color on hover */
   background-color: #ffe700; /* Slightly different gold on hover */
+}
+
+/* Media Query for smaller screens */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+    display: none; /* Hide menu by default */
+  }
+
+  nav ul.active {
+    display: flex; /* Show menu when active */
+  }
 }
 
 main {
@@ -181,76 +208,4 @@ footer {
   text-align: center;
   padding: 10px 0;
   width: 100%; /* Ensure the footer takes the full width */
-}
-
-/* Media queries for responsive design */
-@media (max-width: 768px) {
-  header {
-      padding: 10px 0;
-  }
-
-  nav ul {
-      flex-direction: column;
-      align-items: center;
-  }
-
-  nav li {
-      margin: 5px 0;
-  }
-
-  nav a {
-      padding: 10px;
-      width: 100%;
-  }
-
-  .content {
-      padding: 10px;
-  }
-
-  form input, form textarea {
-      padding: 8px;
-  }
-
-  form button {
-      padding: 8px 16px;
-  }
-
-  .large-select {
-      width: 100%;
-  }
-}
-
-@media (min-width: 769px) and (max-width: 1024px) {
-  header {
-      padding: 8px 0;
-  }
-
-  nav ul {
-      flex-direction: row;
-      justify-content: space-around;
-  }
-
-  nav li {
-      margin: 0 10px;
-  }
-
-  nav a {
-      padding: 8px 12px;
-  }
-
-  .content {
-      padding: 15px;
-  }
-
-  form input, form textarea {
-      padding: 8px;
-  }
-
-  form button {
-      padding: 8px 16px;
-  }
-
-  .large-select {
-      width: 80%;
-  }
 }
