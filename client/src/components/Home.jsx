@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import '../styles.css'; // Correct relative path
+import '../styles.css';
 
 const Home = () => {
     const images1 = ['/images/goatfence.webp', '/images/goatsierra.webp'];

@@ -1,4 +1,4 @@
-/* CSS Reset */
+/* General Reset */
 * {
   margin: 0;
   padding: 0;
@@ -40,23 +40,22 @@ nav li {
 nav a {
   text-decoration: none;
   color: #FFD700; /* Gold color */
-  transition: color 0.3s; /* Only transition color */
-  background: none !important; /* Remove background */
-  padding: 0 !important; /* Remove padding */
-  border: none !important; /* Remove border */
-  outline: none !important; /* Remove outline */
-  box-shadow: none !important; /* Remove box shadow */
+  transition: color 0.3s;
+  background: none;
+  padding: 0;
+  border: none;
+  outline: none;
+  box-shadow: none;
 }
 
-nav a:focus,
-nav a:active {
-  outline: none !important; /* Remove focus outline */
-  border: none !important; /* Ensure no border */
-  box-shadow: none !important; /* Ensure no shadow */
+nav a:focus, nav a:active {
+  outline: none;
+  border: none;
+  box-shadow: none;
 }
 
 nav a:hover {
-  color: #e6be00; /* Change color on hover */
+  color: #e6be00;
 }
 
 main {
@@ -67,8 +66,8 @@ main {
 }
 
 .content {
-  max-width: 800px;
-  margin: 0 auto;
+  max-width: 1200px;
+  width: 100%;
   padding: 20px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   background-color: #fff;
@@ -102,24 +101,24 @@ form button:hover {
 }
 
 ul {
-  list-style-type: none;
+  list-style: none;
   padding: 0;
 }
 
 li {
-  padding: 10px 0;
-  border-bottom: 1px solid #ddd;
+  margin-bottom: 5px;
+  padding: 15px;
 }
 
 li h2 {
-  margin: 0 0 5px; /* Reduced margin for better spacing */
+  margin: 0 0 5px;
   font-size: 1.5em;
 }
 
 li h3 {
   margin: 0 0 10px;
   font-size: 1.2em;
-  color: #6B4226; /* Brown color for author */
+  color: #6B4226;
 }
 
 li p {
@@ -155,10 +154,42 @@ li ul li h4 {
 }
 
 .large-select {
-  width: 300px; 
-  height: 50px; 
-  font-size: 16px; 
-  padding: 5px; 
-  border-radius: 4px; 
-  border: 1px solid #ccc; 
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+footer {
+  background-color: #6B4226;
+  color: white;
+  text-align: center;
+  padding: 10px 0;
+  width: 100%;
+}
+
+/* Image Carousel Styles */
+.image-carousel {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+}
+
+.carousel-image {
+  max-width: 45%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out, opacity 0.5s ease-in-out;
+  opacity: 1;
+}
+
+.carousel-image.fade-out {
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.carousel-image:hover {
+  transform: scale(1.05);
 }
