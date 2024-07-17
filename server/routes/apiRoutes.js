@@ -1,7 +1,14 @@
 const express = require('express');
+const { getAuthToken } = require('../auth');
 const router = express.Router();
-const apiController = require('../controllers/apiController'); // Corrected path to apiController
 
-router.get('/breeds', apiController.getBreeds); // Example route
+router.get('/token', async (req, res) => {
+    try {
+        const token = await getAuthToken();
+        res.json({ token });
+    } catch (error) {
+        res.status(500).json({ error: 'Failed to get token' });
+    }
+});
 
 module.exports = router;

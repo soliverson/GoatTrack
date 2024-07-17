@@ -11,7 +11,7 @@ const Header = () => {
                     <li><Link to="/">Home</Link></li>
                     <li><Link to="/goat-profile">Goat Profile</Link></li>
                     <li><Link to="/community-forum">Community Forum</Link></li>
-                    <li><Link to="/goat-breeds">Goat Breeds</Link></li>
+                    <li><Link to="/goat-data">Goat Data</Link></li>
                 </ul>
             </nav>
         </header>

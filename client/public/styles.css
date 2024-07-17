@@ -68,7 +68,7 @@ main {
 
 .content {
   max-width: 800px;
-  width: 100%;
+  margin: 0 auto;
   padding: 20px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   background-color: #fff;
@@ -102,13 +102,13 @@ form button:hover {
 }
 
 ul {
-  list-style: none;
+  list-style-type: none;
   padding: 0;
 }
 
 li {
-  margin-bottom: 20px;
-  padding: 20px;
+  padding: 10px 0;
+  border-bottom: 1px solid #ddd;
 }
 
 li h2 {
