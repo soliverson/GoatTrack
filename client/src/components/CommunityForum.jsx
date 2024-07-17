@@ -11,19 +11,23 @@ const CommunityForum = () => {
 
     useEffect(() => {
         let isMounted = true; // Flag to prevent state updates after unmounting
-        axios.get('https://goattrack.net/api/forum/posts') // Update this URL if needed
-            .then(response => {
+
+        const fetchPosts = async () => {
+            try {
+                const response = await axios.get('https://goattrack.net/api/forum/posts'); // Update this URL if needed
                 if (isMounted) {
                     setPosts(response.data);
                     setLoading(false);
                 }
-            })
-            .catch(error => {
+            } catch (error) {
                 if (isMounted) {
                     setError(error.response ? error.response.data.message : 'Error fetching posts');
                     setLoading(false);
                 }
-            });
+            }
+        };
+
+        fetchPosts();
 
         return () => {
             isMounted = false; // Clean up to avoid memory leaks
@@ -35,11 +39,15 @@ const CommunityForum = () => {
         setNewPost(prevState => ({ ...prevState, [name]: value }));
     };
 
-    const handlePostSubmit = (e) => {
+    const handlePostSubmit = async (e) => {
         e.preventDefault();
-        axios.post('https://goattrack.net/api/forum/posts', newPost) // Update this URL if needed
-            .then(response => setPosts(prevPosts => [...prevPosts, response.data]))
-            .catch(error => console.error(error));
+        try {
+            const response = await axios.post('https://goattrack.net/api/forum/posts', newPost); // Update this URL if needed
+            setPosts(prevPosts => [...prevPosts, response.data]);
+            setNewPost({ author: '', title: '', content: '' });
+        } catch (error) {
+            console.error('Error posting new post:', error);
+        }
     };
 
     const handleReplyChange = (e) => {
@@ -47,14 +55,15 @@ const CommunityForum = () => {
         setNewReply(prevState => ({ ...prevState, [name]: value }));
     };
 
-    const handleReplySubmit = (postId) => {
-        axios.post(`https://goattrack.net/api/forum/posts/${postId}/replies`, newReply) // Update this URL if needed
-            .then(response => {
-                setPosts(posts.map(post => post._id === postId ? response.data : post));
-                setReplyingTo(null);
-                setNewReply({ author: '', content: '' });
-            })
-            .catch(error => console.error(error));
+    const handleReplySubmit = async (postId) => {
+        try {
+            const response = await axios.post(`https://goattrack.net/api/forum/posts/${postId}/replies`, newReply); // Update this URL if needed
+            setPosts(posts.map(post => post._id === postId ? response.data : post));
+            setReplyingTo(null);
+            setNewReply({ author: '', content: '' });
+        } catch (error) {
+            console.error('Error posting reply:', error);
+        }
     };
 
     if (loading) {
