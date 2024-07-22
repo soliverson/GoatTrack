@@ -1,80 +1,124 @@
-/* General Reset */
+/* Reset and base styles */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-body {
+html, body {
+  height: 100%;
   font-family: 'Open Sans', sans-serif;
-  margin: 0;
-  padding: 0;
+}
+
+body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
 }
 
-header, footer {
+/* Header styles */
+header {
   background-color: #6B4226; /* Brown color */
   color: white;
-  padding: 10px 0;
   text-align: center;
+  padding: 10px 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-header h1, footer p {
-  margin: 0;
+header .logo {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 10px; /* Add some space below the logo */
 }
 
-nav ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: #FFD700; /* Gold color */
+  padding: 10px;
+  position: absolute;
+  top: 10px;
+  right: 20px;
+}
+
+nav {
+  width: 100%;
+  background-color: #FFD700; /* Gold background */
   display: flex;
   justify-content: center;
 }
 
+nav ul {
+  display: flex;
+  list-style: none;
+  width: 100%;
+  justify-content: space-around;
+  margin: 0;
+}
+
 nav li {
-  margin: 0 15px;
+  flex-grow: 1;
+  text-align: center;
 }
 
 nav a {
   text-decoration: none;
-  color: #FFD700; /* Gold color */
+  color: #6B4226; /* Brown color */
+  font-weight: bold;
   transition: color 0.3s;
-  background: none;
-  padding: 0;
-  border: none;
-  outline: none;
-  box-shadow: none;
-}
-
-nav a:focus, nav a:active {
-  outline: none;
-  border: none;
-  box-shadow: none;
+  padding: 10px 15px;
+  display: block;
 }
 
 nav a:hover {
-  color: #e6be00;
+  color: #e6be00; /* Hover color */
+  background-color: #ffe700; /* Hover background */
 }
 
+/* Media queries for responsive design */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  nav ul {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  nav.active ul {
+    display: flex;
+  }
+}
+
+/* Main content styles */
 main {
+  background-color: #f5f5f5; /* Light grey */
   flex: 1;
   padding: 20px;
   display: flex;
   justify-content: center;
+  width: 100%;
 }
 
 .content {
   max-width: 1200px;
   width: 100%;
   padding: 20px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   background-color: #fff;
   border-radius: 8px;
-  margin: 20px auto; /* Center content and add margin */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin: 20px auto;
 }
 
+/* Form styles */
 form {
   margin-bottom: 20px;
 }
@@ -90,15 +134,16 @@ form input, form textarea, form select, form button {
 
 form button {
   width: auto;
-  background-color: #6B4226;
+  background-color: #6B4226; /* Button color */
   color: white;
   cursor: pointer;
 }
 
 form button:hover {
-  background-color: #5a371e;
+  background-color: #5a371e; /* Button hover color */
 }
 
+/* List styles */
 ul {
   list-style: none;
   padding: 0;
@@ -117,7 +162,7 @@ li h2 {
 li h3 {
   margin: 0 0 10px;
   font-size: 1.2em;
-  color: #6B4226;
+  color: #6B4226; /* Brown color */
 }
 
 li p {
@@ -127,14 +172,14 @@ li p {
 li button {
   margin-top: 10px;
   padding: 5px 10px;
-  background-color: #FFD700;
+  background-color: #FFD700; /* Gold color */
   border: none;
   border-radius: 4px;
   cursor: pointer;
 }
 
 li button:hover {
-  background-color: #e6be00;
+  background-color: #e6be00; /* Hover color */
 }
 
 li ul {
@@ -152,23 +197,26 @@ li ul li h4 {
   margin: 0 0 5px;
 }
 
+/* Large select style */
 .large-select {
-  width: 100%;
-  padding: 10px;
-  margin-bottom: 20px;
-  border: 1px solid #ddd;
+  width: 300px;
+  height: 50px;
+  font-size: 16px;
+  padding: 5px;
   border-radius: 4px;
+  border: 1px solid #ccc;
 }
 
+/* Footer styles */
 footer {
-  background-color: #6B4226;
+  background-color: #6B4226; /* Brown color */
   color: white;
   text-align: center;
   padding: 10px 0;
   width: 100%;
 }
 
-/* Image Carousel Styles */
+/* Image carousel styles */
 .image-carousel {
   display: flex;
   flex-direction: column;
@@ -183,12 +231,11 @@ footer {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease-in-out, opacity 0.5s ease-in-out;
   opacity: 1;
-  margin: 0px;
+  margin: 0;
 }
 
 .carousel-image.fade-out {
   opacity: 0;
-  transition: opacity 0.5s ease-in-out;
 }
 
 .carousel-image:hover {
@@ -225,7 +272,7 @@ footer {
   }
 }
 
-/* Table Styles */
+/* Table styles */
 .goat-data-table {
   width: 100%;
   border-collapse: collapse;

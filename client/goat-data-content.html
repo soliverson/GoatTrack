@@ -1,0 +1,36 @@
+<div class="content">
+  <h1>Goat Data</h1>
+  <label for="typeSelect">Select type:</label>
+  <select id="typeSelect" class="large-select">
+    <option value="">Select Type</option>
+    <option value="dairy">Dairy</option>
+    <option value="meat">Meat</option>
+    <option value="all">All Goats</option>
+  </select>
+
+  <div id="stateSelectContainer" style="display: none;">
+    <label for="stateSelect">Select state:</label>
+    <select id="stateSelect" class="large-select">
+      <option value="">Select State</option>
+    </select>
+  </div>
+
+  <div id="loading" style="display: none;">Loading...</div>
+  <div id="error" style="display: none;"></div>
+
+  <div id="dataContainer" style="display: none;">
+    <h2 id="dataTitle"></h2>
+    <table class="goat-data-table">
+      <thead>
+        <tr>
+          <th>State</th>
+          <th>County</th>
+          <th id="typeHeader1"></th>
+          <th id="typeHeader2"></th>
+        </tr>
+      </thead>
+      <tbody id="dataBody"></tbody>
+    </table>
+  </div>
+  <script src="js/goat-data.js"></script>
+</div>
