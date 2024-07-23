@@ -6,14 +6,20 @@ document.addEventListener('DOMContentLoaded', () => {
     '/goat-profile': 'goat-profile-content.html',
     '/community-forum': 'community-forum-content.html',
     '/goat-data': 'goat-data-content.html',
-    // Add other routes here if needed
   };
 
-  function navigateTo(path) {
+  window.navigateTo = function(path) {
     const url = routes[path] || 'home-content.html';
     fetch(url)
-      .then(response => response.text())
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        return response.text();
+      })
       .then(html => {
+        // Clear the main content before inserting new content
+        mainContent.innerHTML = '';
         mainContent.innerHTML = html;
         const scripts = mainContent.querySelectorAll('script');
         scripts.forEach(script => {
@@ -27,19 +33,19 @@ document.addEventListener('DOMContentLoaded', () => {
         mainContent.innerHTML = '<p>Error loading page.</p>';
       });
     window.history.pushState({}, path, window.location.origin + path);
-  }
+  };
 
   document.querySelectorAll('.nav-link').forEach(link => {
     link.addEventListener('click', event => {
       event.preventDefault();
       const path = event.target.getAttribute('data-link');
-      navigateTo(path);
+      window.navigateTo(path);
     });
   });
 
   window.onpopstate = () => {
-    navigateTo(window.location.pathname);
+    window.navigateTo(window.location.pathname);
   };
 
-  navigateTo(window.location.pathname);
+  window.navigateTo(window.location.pathname);
 });

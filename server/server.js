@@ -1,29 +1,28 @@
 const express = require('express');
-const cors = require('cors');
 const path = require('path');
 const app = express();
+const PORT = process.env.PORT || 3000;
 require('dotenv').config();
-const routes = require('./routes');
+const session = require('express-session');
 
-// Enable CORS for all routes
-app.use(cors());
-
-app.use(express.json());
-
-// Use your routes
-app.use('/api', routes);
+// Middleware to handle session
+app.use(session({
+  secret: process.env.SESSION_SECRET,
+  resave: false,
+  saveUninitialized: true
+}));
 
 // Serve static files from the 'public' directory
 app.use(express.static(path.join(__dirname, '../client/public')));
+
+// Route to handle API requests
+app.use('/api', require('./api'));
 
 // Fallback to index.html for client-side routing
 app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, '../client/public', 'index.html'));
 });
 
-const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
+  console.log(`Server is running on port ${PORT}`);
 });
-
-module.exports = app;
