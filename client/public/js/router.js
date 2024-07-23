@@ -18,8 +18,6 @@ document.addEventListener('DOMContentLoaded', () => {
         return response.text();
       })
       .then(html => {
-        // Clear the main content before inserting new content
-        mainContent.innerHTML = '';
         mainContent.innerHTML = html;
         const scripts = mainContent.querySelectorAll('script');
         scripts.forEach(script => {

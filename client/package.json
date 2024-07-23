@@ -4,14 +4,14 @@
   "description": "Client for GoatTrack application",
   "main": "index.js",
   "scripts": {
-    "start": "parcel public/index.html --port 1234",
-    "dev": "parcel public/index.html --port 1234",
-    "build": "parcel build public/index.html --dist-dir build"
+    "start": "parcel serve public/index.html --port 1234",
+    "dev": "parcel serve public/index.html --port 1234",
+    "build": "parcel build public/index.html"
   },
   "keywords": [],
   "author": "Stacy Oliverson",
   "license": "ISC",
   "devDependencies": {
-    "parcel": "^2.12.0"
+    "parcel": "^2.0.0"
   }
 }
