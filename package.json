@@ -7,9 +7,9 @@
     "start": "node server/app.js",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
     "server": "nodemon server/app.js",
-    "client": "cd client && npm run dev",
-    "build": "cd client && npm run build",
-    "serve": "cd client && npm run serve"
+    "client": "node server.js",
+    "build": "parcel build public/index.html",
+    "serve": "parcel serve public/index.html --port 1234"
   },
   "dependencies": {
     "@azure/msal-node": "^2.10.0",
@@ -20,6 +20,7 @@
     "dotenv": "^10.0.0",
     "express": "^4.17.1",
     "express-session": "^1.17.2",
+    "http-proxy-middleware": "^1.0.6",
     "leaflet": "^1.9.4",
     "mongoose": "^8.5.0",
     "passport": "^0.7.0",

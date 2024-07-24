@@ -23,12 +23,13 @@ document.addEventListener('DOMContentLoaded', async () => {
             const selectedBreed = data.find(breed => breed.name === breedSelect.value);
             if (selectedBreed) {
                 breedTitle.textContent = selectedBreed.name;
-                breedDescription.textContent = selectedBreed.description || 'No description available';
+                breedDescription.textContent = selectedBreed.characteristics || 'No description available';
                 dataContainer.classList.remove('hidden');
             }
         });
 
     } catch (err) {
+        console.error('Fetch Error:', err);
         error.textContent = `API Error: ${err.message}`;
         error.classList.remove('hidden');
     } finally {
