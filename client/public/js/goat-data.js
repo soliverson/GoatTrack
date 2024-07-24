@@ -1,3 +1,4 @@
+// client/public/js/goat-data.js
 document.addEventListener('DOMContentLoaded', async function() {
     console.log('DOMContentLoaded event fired');
     const typeSelect = document.getElementById('typeSelect');
@@ -8,8 +9,7 @@ document.addEventListener('DOMContentLoaded', async function() {
     const dataContainer = document.getElementById('dataContainer');
     const dataTitle = document.getElementById('dataTitle');
     const dataBody = document.getElementById('dataBody');
-    const typeHeader1 = document.getElementById('typeHeader1');
-    const typeHeader2 = document.getElementById('typeHeader2');
+    console.log('DOM elements assigned');
 
     let data = [];
     let states = [];
@@ -27,15 +27,14 @@ document.addEventListener('DOMContentLoaded', async function() {
             return json;
         } catch (error) {
             console.error('API Error:', error);
-            throw new Error('Failed to fetch data');
         }
     };
 
     async function fetchData() {
         console.log('Starting fetchData');
-        loading.classList.remove('hidden');
-        errorDiv.classList.add('hidden');
-        dataContainer.classList.add('hidden');
+        loading.style.display = 'block';
+        errorDiv.style.display = 'none';
+        dataContainer.style.display = 'none';
         try {
             const json = await fetchGoatData();
             console.log('Fetched goat data:', json);
@@ -63,10 +62,10 @@ document.addEventListener('DOMContentLoaded', async function() {
                 stateSelect.appendChild(option);
             });
 
-            loading.classList.add('hidden');
+            loading.style.display = 'none';
         } catch (error) {
-            loading.classList.add('hidden');
-            errorDiv.classList.remove('hidden');
+            loading.style.display = 'none';
+            errorDiv.style.display = 'block';
             errorDiv.textContent = 'Error fetching data';
             console.error('API Error:', error);
         }
@@ -75,10 +74,10 @@ document.addEventListener('DOMContentLoaded', async function() {
     typeSelect.addEventListener('change', function() {
         console.log('Type selected:', typeSelect.value);
         const selectedType = typeSelect.value;
-        stateSelectContainer.classList.toggle('hidden', !selectedType);
+        stateSelectContainer.style.display = selectedType ? 'block' : 'none';
         stateSelect.value = '';
         dataBody.innerHTML = '';
-        dataContainer.classList.add('hidden');
+        dataContainer.style.display = 'none';
     });
 
     stateSelect.addEventListener('change', function() {
@@ -108,7 +107,7 @@ document.addEventListener('DOMContentLoaded', async function() {
         `).join('');
 
         dataTitle.textContent = `Data for ${selectedType.charAt(0).toUpperCase() + selectedType.slice(1)} Goats in ${selectedState}`;
-        dataContainer.classList.remove('hidden');
+        dataContainer.style.display = 'block';
     });
 
     console.log('Starting fetchData');
