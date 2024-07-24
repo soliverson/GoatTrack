@@ -17,6 +17,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         return;
     }
 
+    
     const carouselImages = [
         "images/goatfence.webp",
         "images/goatsierra.webp",
@@ -41,7 +42,6 @@ document.addEventListener('DOMContentLoaded', async () => {
             console.log('Changing to image:', carouselImage.src);
         }, 3000); 
     }
-
 
     startCarousel(carouselImages);
 
@@ -72,7 +72,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         });
 
         const namesResponse = await fetch('https://api.api-ninjas.com/v1/babynames?gender=neutral', {
-            headers: { 'X-Api-Key': 'kEAujUwXO4z9bTAP5vekcnpU2HcUJ3u9JrubI17x' }
+            headers: { 'X-Api-Key': process.env.API_NINJAS_KEY } 
         });
         if (!namesResponse.ok) {
             const errorResponse = await namesResponse.text();
