@@ -3,7 +3,7 @@ require('dotenv').config();
 
 const fetchGoatData = async () => {
     try {
-        const response = await axios.get(process.env.REACT_APP_USDA_API_URL);
+        const response = await axios.get(process.env.USDA_API_URL);
         console.log('Fetched goat data:', response.data);
         return response.data;
     } catch (error) {

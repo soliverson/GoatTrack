@@ -3,7 +3,7 @@ const axios = require('axios');
 exports.getGoatData = async (req, res) => {
     try {
         console.log('Fetching goat data...');
-        const response = await axios.get(process.env.REACT_APP_USDA_API_URL);
+        const response = await axios.get(process.env.USDA_API_URL);
         console.log('Response data:', response.data);
         res.status(200).json(response.data);
     } catch (error) {

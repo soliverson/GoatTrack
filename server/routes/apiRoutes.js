@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const axios = require('axios');
-const API_URL = process.env.REACT_APP_USDA_API_URL;
+const API_URL = process.env.USDA_API_URL;
 
 router.get('/goat-data', async (req, res) => {
     try {
