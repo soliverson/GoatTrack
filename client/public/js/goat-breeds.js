@@ -1,27 +1,27 @@
 document.addEventListener('DOMContentLoaded', async function() {
     const breedSelect = document.getElementById('breedSelect');
-    const breedInfoContainer = document.getElementById('breedInfoContainer');
-    const breedName = document.getElementById('breedName');
+    const loading = document.getElementById('loading');
+    const errorDiv = document.getElementById('error');
+    const dataContainer = document.getElementById('dataContainer');
+    const breedTitle = document.getElementById('breedTitle');
     const breedDescription = document.getElementById('breedDescription');
 
-    const fetchBreeds = async () => {
+    const fetchBreedData = async () => {
         try {
-            const response = await fetch('https://api.api-ninjas.com/v1/animals?name=goat', {
-                headers: { 'X-Api-Key': 'RryCHvoFypNy7AsAn6DrGg==Wib69zM3mlU9kru0' }
-            });
+            const response = await fetch('/api/breeds');
             if (!response.ok) {
-                throw new Error('Network response was not ok');
+                throw new Error(`HTTP error! status: ${response.status}`);
             }
-            const breeds = await response.json();
-            console.log('Fetched breeds:', breeds);
-            return breeds;
+            const json = await response.json();
+            return json;
         } catch (error) {
             console.error('API Error:', error);
             throw error;
         }
     };
 
-    const populateBreedSelect = (breeds) => {
+    const populateBreeds = (breeds) => {
+        breedSelect.innerHTML = '<option value="">Select Breed</option>';
         breeds.forEach(breed => {
             const option = document.createElement('option');
             option.value = breed.name;
@@ -30,24 +30,30 @@ document.addEventListener('DOMContentLoaded', async function() {
         });
     };
 
+    const showBreedDetails = (breed) => {
+        breedTitle.textContent = breed.name;
+        breedDescription.textContent = breed.description;
+        dataContainer.classList.remove('hidden');
+    };
+
     breedSelect.addEventListener('change', function() {
-        const selectedBreedName = breedSelect.value;
-        const selectedBreed = breeds.find(breed => breed.name === selectedBreedName);
+        const selectedBreed = breedSelect.value;
         if (selectedBreed) {
-            breedName.textContent = selectedBreed.name;
-            breedDescription.textContent = selectedBreed.characteristics || 'Description not available.';
-            breedInfoContainer.classList.remove('hidden');
+            const breed = breeds.find(breed => breed.name === selectedBreed);
+            showBreedDetails(breed);
         } else {
-            breedInfoContainer.classList.add('hidden');
+            dataContainer.classList.add('hidden');
         }
     });
 
+    loading.classList.remove('hidden');
     try {
-        const breeds = await fetchBreeds();
-        populateBreedSelect(breeds);
+        const breeds = await fetchBreedData();
+        populateBreeds(breeds);
+        loading.classList.add('hidden');
     } catch (error) {
-        const errorDiv = document.createElement('div');
-        errorDiv.textContent = 'Error fetching data';
-        document.body.appendChild(errorDiv);
+        loading.classList.add('hidden');
+        errorDiv.classList.remove('hidden');
+        errorDiv.textContent = 'Error fetching breed data';
     }
 });
