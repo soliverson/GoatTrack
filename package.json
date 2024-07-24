@@ -8,7 +8,7 @@
     "dev": "concurrently \"npm run server\" \"npm run client\"",
     "server": "nodemon server/app.js",
     "client": "node server.js",
-    "build": "parcel build public/index.html",
+    "build": "cd client && npm run build",
     "serve": "parcel serve public/index.html --port 1234"
   },
   "dependencies": {
