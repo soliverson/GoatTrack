@@ -50,7 +50,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 throw new Error('API Error: ' + e.message);
             }
             
-            if (!data) {
+            if (!data.features || data.features.length === 0) {
                 throw new Error('No data received');
             }
             
@@ -67,6 +67,7 @@ document.addEventListener('DOMContentLoaded', () => {
         console.log('Populating data');
         dataBody.innerHTML = '';
         dataTitle.textContent = `Showing ${type} goats`;
+        
         if (type === 'dairy' || type === 'meat') {
             document.getElementById('typeHeader1').textContent = `${type.charAt(0).toUpperCase() + type.slice(1)} Count`;
             document.getElementById('typeHeader2').textContent = `${type.charAt(0).toUpperCase() + type.slice(1)} Farms`;
