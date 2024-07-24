@@ -13,11 +13,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const router = async () => {
       const routes = [
-          { path: "/", view: () => loadHTMLContent("/home-content.html") },
-          { path: "/home-content.html", view: () => loadHTMLContent("/home-content.html") },
-          { path: "/goat-data.html", view: () => loadHTMLContent("/goat-data.html") },
+        { path: "/home-content.html", view: () => loadHTMLContent("/home-content.html") },
+        { path: "/goat-data.html", view: () => loadHTMLContent("/goat-data.html") },
           { path: "/goat-profile-content.html", view: () => loadHTMLContent("/goat-profile-content.html") },
-          { path: "/community-forum-content.html", view: () => loadHTMLContent("/community-forum-content.html") }
+          { path: "/community-forum-content.html", view: () => loadHTMLContent("/community-forum-content.html") },
       ];
 
       const potentialMatches = routes.map(route => {
@@ -41,16 +40,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const loadHTMLContent = async (url) => {
       const mainContent = document.getElementById('main-content');
-      try {
-          const response = await fetch(url);
-          if (!response.ok) {
-              throw new Error(`Failed to load content from ${url}`);
-          }
-          const data = await response.text();
-          mainContent.innerHTML = data;
-      } catch (error) {
-          console.error("Error loading content:", error);
-          mainContent.innerHTML = `<p>Error loading content. Please try again later.</p>`;
+      const response = await fetch(url);
+      const data = await response.text();
+      mainContent.innerHTML = data;
+      
+      // Dynamically load and execute the script for the specific content
+      if (url === "/goat-data.html") {
+          const script = document.createElement('script');
+          script.src = 'js/goat-data.js';
+          script.defer = true;
+          mainContent.appendChild(script);
       }
   };
 

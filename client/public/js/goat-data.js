@@ -1,6 +1,7 @@
-document.addEventListener('DOMContentLoaded', () => {
+console.log('goat-data.js script loaded');
+
+document.addEventListener('DOMContentLoaded', async function() {
     console.log('DOMContentLoaded event fired');
-    
     const typeSelect = document.getElementById('typeSelect');
     const stateSelectContainer = document.getElementById('stateSelectContainer');
     const stateSelect = document.getElementById('stateSelect');
@@ -9,9 +10,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const dataContainer = document.getElementById('dataContainer');
     const dataTitle = document.getElementById('dataTitle');
     const dataBody = document.getElementById('dataBody');
-    
     console.log('DOM elements assigned');
-    
+
     typeSelect.addEventListener('change', () => {
         const type = typeSelect.value;
         console.log('Type selected:', type);
@@ -27,25 +27,25 @@ document.addEventListener('DOMContentLoaded', () => {
         loading.classList.remove('hidden');
         error.classList.add('hidden');
         dataContainer.classList.add('hidden');
-        
-        const apiUrl = CONFIG.API_URL;
+
+        const apiUrl = '/api/goat-data';
         console.log('Fetching goat data from URL:', apiUrl);
-        
+
         try {
             const response = await fetch(apiUrl);
             console.log('Response:', response);
-            
+
             if (!response.ok) {
                 throw new Error('Network response was not ok ' + response.statusText);
             }
-            
+
             const data = await response.json();
             console.log('Fetched goat data:', data);
-            
+
             if (!data.features || data.features.length === 0) {
                 throw new Error('No data received');
             }
-            
+
             populateData(data, type);
         } catch (err) {
             console.error('API Error:', err);
@@ -59,7 +59,7 @@ document.addEventListener('DOMContentLoaded', () => {
         console.log('Populating data');
         dataBody.innerHTML = '';
         dataTitle.textContent = `Showing ${type} goats`;
-        
+
         if (type === 'dairy' || type === 'meat') {
             document.getElementById('typeHeader1').textContent = `${type.charAt(0).toUpperCase() + type.slice(1)} Count`;
             document.getElementById('typeHeader2').textContent = `${type.charAt(0).toUpperCase() + type.slice(1)} Farms`;
@@ -67,11 +67,11 @@ document.addEventListener('DOMContentLoaded', () => {
             document.getElementById('typeHeader1').textContent = 'Dairy Count';
             document.getElementById('typeHeader2').textContent = 'Meat Count';
         }
-        
+
         data.features.forEach(feature => {
             const attributes = feature.attributes;
             console.log('Item:', attributes);
-            
+
             const row = document.createElement('tr');
             row.innerHTML = `
                 <td>${attributes.STATE_NAME}</td>
@@ -81,7 +81,7 @@ document.addEventListener('DOMContentLoaded', () => {
             `;
             dataBody.appendChild(row);
         });
-        
+
         dataContainer.classList.remove('hidden');
     }
 
