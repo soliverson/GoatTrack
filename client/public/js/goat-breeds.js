@@ -33,30 +33,12 @@ document.addEventListener('DOMContentLoaded', async function () {
         });
     };
 
-    const fetchBreedData = async (breedName) => {
-        try {
-            loading.style.display = 'block';
-            const response = await fetch(`/api/goat-breeds/${breedName}`);
-            if (!response.ok) {
-                throw new Error('Network response was not ok');
-            }
-            const breed = await response.json();
-            loading.style.display = 'none';
-            return breed;
-        } catch (error) {
-            loading.style.display = 'none';
-            errorDiv.style.display = 'block';
-            errorDiv.textContent = `Error: ${error.message}`;
-            console.error('API Error:', error);
-        }
-    };
-
-    breedSelect.addEventListener('change', async () => {
+    breedSelect.addEventListener('change', () => {
         const selectedBreed = breedSelect.value;
         if (selectedBreed) {
-            const breed = await fetchBreedData(selectedBreed);
+            const breed = breeds.find(b => b.name === selectedBreed);
             breedTitle.textContent = breed.name;
-            breedDescription.textContent = breed.description;
+            breedDescription.textContent = breed.characteristics;
             dataContainer.style.display = 'block';
         } else {
             dataContainer.style.display = 'none';
@@ -64,5 +46,7 @@ document.addEventListener('DOMContentLoaded', async function () {
     });
 
     const breeds = await fetchGoatBreeds();
-    populateBreedSelect(breeds);
+    if (breeds) {
+        populateBreedSelect(breeds);
+    }
 });
