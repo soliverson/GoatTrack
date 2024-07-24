@@ -13,8 +13,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const router = async () => {
       const routes = [
-          { path: "/", view: () => loadHTMLContent("/home-content.html") },
-          { path: "/goat-data", view: () => loadHTMLContent("/goat-data.html") },
+          { path: "/home-content.html", view: () => loadHTMLContent("/home-content.html") },
+          { path: "/goat-data.html", view: () => loadHTMLContent("/goat-data.html") },
           { path: "/goat-profile-content.html", view: () => loadHTMLContent("/goat-profile-content.html") },
           { path: "/community-forum-content.html", view: () => loadHTMLContent("/community-forum-content.html") }
       ];
