@@ -5,12 +5,12 @@ document.addEventListener('DOMContentLoaded', () => {
     '/': 'home-content.html',
     '/goat-profile': 'goat-profile-content.html',
     '/community-forum': 'community-forum-content.html',
-    '/goat-data': 'goat-data.html',
+    '/goat-data': 'goat-data-content.html',
     // Add other routes here if needed
   };
 
   function navigateTo(path) {
-    const url = routes[path] || 'index.html';
+    const url = routes[path] || 'home-content.html';
     fetch(url)
       .then(response => response.text())
       .then(html => {
