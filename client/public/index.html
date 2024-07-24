@@ -5,17 +5,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>GoatTrack</title>
   <link rel="stylesheet" href="styles.css">
+  <script src="js/router.js" defer></script>
 </head>
 <body>
   <header id="header">
     <img src="images/goatlogo.webp" alt="GoatTrack Logo" class="logo">
     <nav>
       <ul>
-        <li><a href="home.html">Home</a></li>
-        <li><a href="goat-data.html">Goat Data</a></li>
-        <li><a href="goat-profile.html">Goat Profile</a></li>
-        <li><a href="community-forum.html">Community Forum</a></li>
-        <li><a href="goat-breeds.html">Goat Breeds</a></li>
+        <li><a href="/" data-link>Home</a></li>
+        <li><a href="/goat-data" data-link>Goat Data</a></li>
+        <li><a href="/goat-profile" data-link>Goat Profile</a></li>
+        <li><a href="/community-forum" data-link>Community Forum</a></li>
+        <li><a href="/goat-breeds" data-link>Goat Breeds</a></li>
       </ul>
     </nav>
   </header>
@@ -23,6 +24,5 @@
   <footer>
     <p>&copy; 2024 GoatTrack. All rights reserved.</p>
   </footer>
-  <script src="js/goat-breeds.js"></script>
 </body>
 </html>
