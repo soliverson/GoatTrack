@@ -5,26 +5,25 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>GoatTrack</title>
   <link rel="stylesheet" href="styles.css">
-  <script src="js/router.js" defer></script>
-  <script src="js/header.js" defer></script>
+  <link rel="icon" href="./images/favicon.ico" type="image/x-icon">
 </head>
 <body>
   <header>
-    <h1>GoatTrack</h1>
-    <nav>
+    <img src="images/goatlogo.webp" alt="GoatTrack Logo" class="logo" />
+    <button class="menu-toggle" aria-label="Toggle menu">☰</button>
+    <nav class="menu">
       <ul>
-        <li><a href="home-content.html" data-link>Home</a></li>
-        <li><a href="goat-data.html" data-link>Goat Data</a></li>
-        <li><a href="goat-profile-content.html" data-link>Goat Profile</a></li>
-        <li><a href="community-forum-content.html" data-link>Community Forum</a></li>
+        <li><a href="/" class="home-content" data-link="/">Home</a></li>
+        <li><a href="/goat-profile-content" class="nav-link" data-link="/goat-profile">Goat Profile</a></li>
+        <li><a href="/community-forum-content" class="nav-link" data-link="/community-forum">Community Forum</a></li>
+        <li><a href="/goat-data" class="nav-link" data-link="/goat-data">Goat Data</a></li>
       </ul>
     </nav>
   </header>
   <main id="main-content">
     <!-- Dynamic content will be loaded here -->
   </main>
-  <footer>
-    <p>&copy; 2024 GoatTrack. All rights reserved.</p>
-  </footer>
+  <script src="js/header.js"></script>
+  <script src="js/router.js"></script>
 </body>
 </html>
