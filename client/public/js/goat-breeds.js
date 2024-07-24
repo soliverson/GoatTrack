@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', async function() {
+document.addEventListener('DOMContentLoaded', async function () {
     const breedSelect = document.getElementById('breedSelect');
     const loading = document.getElementById('loading');
     const errorDiv = document.getElementById('error');
@@ -8,57 +8,61 @@ document.addEventListener('DOMContentLoaded', async function() {
 
     const fetchGoatBreeds = async () => {
         try {
-            loading.classList.remove('hidden');
+            loading.style.display = 'block';
             const response = await fetch('/api/goat-breeds');
             if (!response.ok) {
                 throw new Error('Network response was not ok');
             }
-            const data = await response.json();
-            return data;
+            const breeds = await response.json();
+            loading.style.display = 'none';
+            return breeds;
         } catch (error) {
-            console.error('Error fetching goat breeds:', error);
-            throw error;
-        } finally {
-            loading.classList.add('hidden');
+            loading.style.display = 'none';
+            errorDiv.style.display = 'block';
+            errorDiv.textContent = `Error: ${error.message}`;
+            console.error('API Error:', error);
         }
     };
 
-    const populateBreedSelect = async () => {
-        try {
-            const breeds = await fetchGoatBreeds();
-            breeds.forEach(breed => {
-                const option = document.createElement('option');
-                option.value = breed.name;
-                option.textContent = breed.name;
-                breedSelect.appendChild(option);
-            });
-        } catch (error) {
-            errorDiv.textContent = 'Error loading breeds';
-            errorDiv.classList.remove('hidden');
-        }
+    const populateBreedSelect = (breeds) => {
+        breeds.forEach(breed => {
+            const option = document.createElement('option');
+            option.value = breed.name;
+            option.textContent = breed.name;
+            breedSelect.appendChild(option);
+        });
     };
 
-    breedSelect.addEventListener('change', async function() {
-        const selectedBreed = breedSelect.value;
-        if (!selectedBreed) return;
-
-        loading.classList.remove('hidden');
+    const fetchBreedData = async (breedName) => {
         try {
-            const response = await fetch(`/api/goat-breeds/${selectedBreed}`);
+            loading.style.display = 'block';
+            const response = await fetch(`/api/goat-breeds/${breedName}`);
             if (!response.ok) {
                 throw new Error('Network response was not ok');
             }
-            const data = await response.json();
-            breedTitle.textContent = data.name;
-            breedDescription.textContent = data.characteristics;
-            dataContainer.classList.remove('hidden');
+            const breed = await response.json();
+            loading.style.display = 'none';
+            return breed;
         } catch (error) {
-            errorDiv.textContent = 'Error loading breed data';
-            errorDiv.classList.remove('hidden');
-        } finally {
-            loading.classList.add('hidden');
+            loading.style.display = 'none';
+            errorDiv.style.display = 'block';
+            errorDiv.textContent = `Error: ${error.message}`;
+            console.error('API Error:', error);
+        }
+    };
+
+    breedSelect.addEventListener('change', async () => {
+        const selectedBreed = breedSelect.value;
+        if (selectedBreed) {
+            const breed = await fetchBreedData(selectedBreed);
+            breedTitle.textContent = breed.name;
+            breedDescription.textContent = breed.description;
+            dataContainer.style.display = 'block';
+        } else {
+            dataContainer.style.display = 'none';
         }
     });
 
-    await populateBreedSelect();
+    const breeds = await fetchGoatBreeds();
+    populateBreedSelect(breeds);
 });
