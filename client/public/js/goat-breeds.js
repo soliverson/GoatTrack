@@ -44,7 +44,7 @@ document.addEventListener('DOMContentLoaded', async function() {
             const breedInfo = await fetch(`/api/goat-breeds/${selectedBreed}`);
             const data = await breedInfo.json();
             breedTitle.textContent = data.name;
-            breedDescription.textContent = data.description;
+            breedDescription.textContent = data.characteristics;
             dataContainer.classList.remove('hidden');
         }
     });
