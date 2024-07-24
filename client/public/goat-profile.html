@@ -1,38 +1,65 @@
-<div class="content">
-  <h1>Goat Profile</h1>
-  <p>The Goat Profile page allows users to manage detailed information about individual goats in their herd...</p>
-  <form id="goatProfileForm">
-    <div>
-      <label for="id">ID:</label>
-      <input type="text" id="id" name="id">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Goat Profile</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="js/goat-profile.js" defer></script>
+</head>
+<body>
+  <header id="header">
+    <h1>GoatTrack</h1>
+    <nav>
+      <ul>
+        <li><a href="home.html" data-link>Home</a></li>
+        <li><a href="goat-data.html" data-link>Goat Data</a></li>
+        <li><a href="goat-profile.html" data-link>Goat Profile</a></li>
+        <li><a href="community-forum.html" data-link>Community Forum</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <div class="content">
+      <h1>Goat Profile</h1>
+      <p>The Goat Profile page allows users to manage detailed information about individual goats in their herd...</p>
+      <form id="goatProfileForm">
+        <div>
+          <label for="id">ID:</label>
+          <input type="text" id="id" name="id">
+        </div>
+        <div>
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name">
+        </div>
+        <div>
+          <label for="sex">Sex:</label>
+          <select id="sex" name="sex">
+            <option value="">Select</option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+          </select>
+        </div>
+        <div>
+          <label for="dateOfBirth">Date of Birth:</label>
+          <input type="date" id="dateOfBirth" name="dateOfBirth">
+        </div>
+        <div>
+          <label for="breed">Breed:</label>
+          <input type="text" id="breed" name="breed">
+        </div>
+        <h2>Medical Records</h2>
+        <div id="medicalRecordsContainer"></div>
+        <button type="button" id="addMedicalRecordButton">Add Medical Record</button>
+        <h2>Vet Visits</h2>
+        <div id="vetVisitsContainer"></div>
+        <button type="button" id="addVetVisitButton">Add Vet Visit</button>
+        <button type="submit">Save Profile</button>
+      </form>
     </div>
-    <div>
-      <label for="name">Name:</label>
-      <input type="text" id="name" name="name">
-    </div>
-    <div>
-      <label for="sex">Sex:</label>
-      <select id="sex" name="sex">
-        <option value="">Select</option>
-        <option value="Male">Male</option>
-        <option value="Female">Female</option>
-      </select>
-    </div>
-    <div>
-      <label for="dateOfBirth">Date of Birth:</label>
-      <input type="date" id="dateOfBirth" name="dateOfBirth">
-    </div>
-    <div>
-      <label for="breed">Breed:</label>
-      <input type="text" id="breed" name="breed">
-    </div>
-    <h2>Medical Records</h2>
-    <div id="medicalRecordsContainer"></div>
-    <button type="button" id="addMedicalRecordButton">Add Medical Record</button>
-    <h2>Vet Visits</h2>
-    <div id="vetVisitsContainer"></div>
-    <button type="button" id="addVetVisitButton">Add Vet Visit</button>
-    <button type="submit">Save Profile</button>
-  </form>
-</div>
-<script src="js/goat-profile.js"></script>
+  </main>
+  <footer>
+    <p>&copy; 2024 GoatTrack. All rights reserved.</p>
+  </footer>
+</body>
+</html>
