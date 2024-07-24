@@ -8,7 +8,22 @@
   <link rel="icon" href="./images/favicon.ico" type="image/x-icon">
 </head>
 <body>
-  <div id="main-content"></div>
+  <header>
+    <img src="images/goatlogo.webp" alt="GoatTrack Logo" class="logo">
+    <button class="menu-toggle" aria-label="Toggle menu">☰</button>
+    <nav class="menu">
+      <ul>
+        <li><a href="home-content.html" class="nav-link" data-link="/home">Goat Profile</a></li>
+        <li><a href="goat-profile-content.html" class="nav-link" data-link="/goat-profile">Goat Profile</a></li>
+        <li><a href="community-forum-content.html" class="nav-link" data-link="/community-forum">Community Forum</a></li>
+        <li><a href="goat-data-content.html" class="nav-link" data-link="/goat-data">Goat Data</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main id="main-content">
+    <!-- Dynamic content will be loaded here -->
+  </main>
+  <script src="js/header.js"></script>
   <script src="js/router.js"></script>
 </body>
 </html>

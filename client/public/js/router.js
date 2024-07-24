@@ -10,7 +10,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   window.navigateTo = function(path) {
     const url = routes[path] || 'home-content.html';
-    console.log(`Navigating to: ${url}`);
     fetch(url)
       .then(response => {
         if (!response.ok) {
@@ -19,10 +18,11 @@ document.addEventListener('DOMContentLoaded', () => {
         return response.text();
       })
       .then(html => {
-        console.log(`Loading content for: ${url}`);
-        mainContent.innerHTML = ''; // Clear previous content
-        mainContent.innerHTML = html; // Insert new content
-        console.log(`After loading: ${mainContent.innerHTML}`); // Debug log
+        const parser = new DOMParser();
+        const doc = parser.parseFromString(html, 'text/html');
+        const content = doc.body.innerHTML;
+        mainContent.innerHTML = content;
+
         const scripts = mainContent.querySelectorAll('script');
         scripts.forEach(script => {
           const newScript = document.createElement('script');
@@ -41,13 +41,11 @@ document.addEventListener('DOMContentLoaded', () => {
     link.addEventListener('click', event => {
       event.preventDefault();
       const path = event.target.getAttribute('data-link');
-      console.log(`Link clicked: ${path}`);
       window.navigateTo(path);
     });
   });
 
   window.onpopstate = () => {
-    console.log(`Popstate triggered: ${window.location.pathname}`);
     window.navigateTo(window.location.pathname);
   };
 
