@@ -2,7 +2,7 @@
   "name": "goattrack",
   "version": "1.0.0",
   "description": "",
-  "main": "server/app.js",
+  "main": "server/server.js",
   "scripts": {
     "start": "node server/app.js",
     "dev": "concurrently \"npm run server\" \"npm run client\"",

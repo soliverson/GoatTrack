@@ -3,7 +3,9 @@ const path = require('path');
 const app = express();
 const PORT = process.env.PORT || 3000;
 require('dotenv').config();
+const cors = require('cors');
 const session = require('express-session');
+const routes = require('./routes');
 
 // Middleware to handle session
 app.use(session({
@@ -12,11 +14,17 @@ app.use(session({
   saveUninitialized: true
 }));
 
+// Enable CORS for all routes
+app.use(cors());
+
+// Parse JSON bodies
+app.use(express.json());
+
+// Use your routes
+app.use('/api', routes);
+
 // Serve static files from the 'public' directory
 app.use(express.static(path.join(__dirname, '../client/public')));
-
-// Route to handle API requests
-app.use('/api', require('./api'));
 
 // Fallback to index.html for client-side routing
 app.get('*', (req, res) => {
@@ -26,3 +34,5 @@ app.get('*', (req, res) => {
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
+
+module.exports = app;
