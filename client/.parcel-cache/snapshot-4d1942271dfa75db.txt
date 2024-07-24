@@ -1,5 +1,5 @@
-6238
-51C:\Users\stacy\Desktop\wdd330\GoatTrack\client\dist133662550168626888 1
+6240
+51C:\Users\stacy\Desktop\wdd330\GoatTrack\client\dist133662572356417980 1
 56C:\Users\stacy\Desktop\wdd330\GoatTrack\client\.cache\f6133662467306731127 1
 86C:\Users\stacy\Desktop\wdd330\GoatTrack\client\node_modules\css-tree\cjs\syntax\atrule133662478539737483 1
 104C:\Users\stacy\Desktop\wdd330\GoatTrack\client\node_modules\dom-serializer\lib\esm\foreignNames.d.ts.map133662478524730941 0
@@ -23,7 +23,7 @@
 108C:\Users\stacy\Desktop\wdd330\GoatTrack\client\node_modules\caniuse-lite\data\features\keyboardevent-code.js133662478544124869 0
 98C:\Users\stacy\Desktop\wdd330\GoatTrack\client\node_modules\@parcel\core\src\public\BundleGraph.js133662478536706258 0
 78C:\Users\stacy\Desktop\wdd330\GoatTrack\client\node_modules\utility-types\dist133662478531439445 1
-76C:\Users\stacy\Desktop\wdd330\GoatTrack\client\public\goat-data-content.html133662550162258437 0
+76C:\Users\stacy\Desktop\wdd330\GoatTrack\client\public\goat-data-content.html133662563656916332 0
 88C:\Users\stacy\Desktop\wdd330\GoatTrack\client\node_modules\css-tree\cjs\utils\clone.cjs133662478530186457 0
 66C:\Users\stacy\Desktop\wdd330\GoatTrack\client\public\js\header.js133662539159935669 0
 59C:\Users\stacy\Desktop\wdd330\GoatTrack\client\node_modules133662478748925279 1
@@ -75,7 +75,7 @@
 79C:\Users\stacy\Desktop\wdd330\GoatTrack\client\public\goat-profile-content.html133662524474146585 0
 113C:\Users\stacy\Desktop\wdd330\GoatTrack\client\node_modules\css-select\node_modules\dom-serializer\lib\index.d.ts133662478530096460 0
 118C:\Users\stacy\Desktop\wdd330\GoatTrack\client\node_modules\@swc\helpers\_\_iterable_to_array_limit_loose\package.json133662478542634921 0
-85C:\Users\stacy\Desktop\wdd330\GoatTrack\client\dist\goat-data-content.2de55de2.js.map133662550166346075 0
+85C:\Users\stacy\Desktop\wdd330\GoatTrack\client\dist\goat-data-content.2de55de2.js.map133662558315245514 0
 94C:\Users\stacy\Desktop\wdd330\GoatTrack\client\node_modules\type-fest\source\set-required.d.ts133662478533667677 0
 98C:\Users\stacy\Desktop\wdd330\GoatTrack\client\node_modules\css-tree\cjs\syntax\node\Dimension.cjs133662478534006567 0
 76C:\Users\stacy\Desktop\wdd330\GoatTrack\client\node_modules\msgpackr\LICENSE133662478519873438 0
@@ -93,7 +93,7 @@
 119C:\Users\stacy\Desktop\wdd330\GoatTrack\client\node_modules\lmdb\dependencies\lmdb-data-v1\libraries\liblmdb\mdb_dump.1133662478533521933 0
 121C:\Users\stacy\Desktop\wdd330\GoatTrack\client\node_modules\@parcel\workers\test\integration\workerfarm\reverse-handle.js133662478535099532 0
 88C:\Users\stacy\Desktop\wdd330\GoatTrack\client\node_modules\csso\lib\restructure\prepare133662478538470434 1
-64C:\Users\stacy\Desktop\wdd330\GoatTrack\client\public\index.html133662549279196031 0
+64C:\Users\stacy\Desktop\wdd330\GoatTrack\client\public\index.html133662563517771431 0
 91C:\Users\stacy\Desktop\wdd330\GoatTrack\client\node_modules\css-select\lib\general.d.ts.map133662478535405824 0
 81C:\Users\stacy\Desktop\wdd330\GoatTrack\client\node_modules\color-convert\LICENSE133662478520679079 0
 117C:\Users\stacy\Desktop\wdd330\GoatTrack\client\node_modules\@swc\helpers\cjs\_class_static_private_field_spec_set.cjs133662478533969844 0
@@ -143,7 +143,7 @@
 122C:\Users\stacy\Desktop\wdd330\GoatTrack\client\node_modules\@parcel\optimizer-svgo\node_modules\csso\lib\replace\String.js133662478535620588 0
 99C:\Users\stacy\Desktop\wdd330\GoatTrack\client\node_modules\csso\node_modules\css-tree\dist\data.js133662478541166102 0
 71C:\Users\stacy\Desktop\wdd330\GoatTrack\client\node_modules\@jridgewell133662478244857267 1
-69C:\Users\stacy\Desktop\wdd330\GoatTrack\client\public\js\goat-data.js133662550513754398 0
+69C:\Users\stacy\Desktop\wdd330\GoatTrack\client\public\js\goat-data.js133662572355981059 0
 110C:\Users\stacy\Desktop\wdd330\GoatTrack\client\node_modules\htmlnano\lib\modules\collapseBooleanAttributes.cjs133662478522658029 0
 104C:\Users\stacy\Desktop\wdd330\GoatTrack\client\node_modules\csso\node_modules\css-tree\cjs\syntax\atrule133662478539386724 1
 101C:\Users\stacy\Desktop\wdd330\GoatTrack\client\node_modules\caniuse-lite\data\features\will-change.js133662478546560217 0
@@ -420,7 +420,7 @@
 108C:\Users\stacy\Desktop\wdd330\GoatTrack\client\node_modules\css-select\lib\esm\pseudo-selectors\pseudos.d.ts133662478538202535 0
 74C:\Users\stacy\Desktop\wdd330\GoatTrack\client\node_modules\csso\README.md133662478539132065 0
 90C:\Users\stacy\Desktop\wdd330\GoatTrack\client\node_modules\update-browserslist-db\LICENSE133662478514176232 0
-88C:\Users\stacy\Desktop\wdd330\GoatTrack\client\dist\goat-profile-content.588a7743.js.map133662550168388464 0
+88C:\Users\stacy\Desktop\wdd330\GoatTrack\client\dist\goat-profile-content.588a7743.js.map133662558313953677 0
 86C:\Users\stacy\Desktop\wdd330\GoatTrack\client\node_modules\@parcel\utils\.eslintrc.js133662478529686084 0
 73C:\Users\stacy\Desktop\wdd330\GoatTrack\client\node_modules\react-refresh133662478529233878 1
 77C:\Users\stacy\Desktop\wdd330\GoatTrack\client\node_modules\lines-and-columns133662478519894753 1
@@ -536,7 +536,7 @@
 82C:\Users\stacy\Desktop\wdd330\GoatTrack\client\node_modules\js-tokens\package.json133662478514146647 0
 88C:\Users\stacy\Desktop\wdd330\GoatTrack\client\node_modules\lightningcss\node\index.d.ts133662478532112731 0
 129C:\Users\stacy\Desktop\wdd330\GoatTrack\client\node_modules\css-select\node_modules\entities\lib\esm\generated\decode-data-xml.js133662478523242364 0
-76C:\Users\stacy\Desktop\wdd330\GoatTrack\client\dist\home-content.f4cf57a8.js133662550166245080 0
+76C:\Users\stacy\Desktop\wdd330\GoatTrack\client\dist\home-content.f4cf57a8.js133662558313897913 0
 66C:\Users\stacy\Desktop\wdd330\GoatTrack\client\node_modules\semver133662478535933132 1
 106C:\Users\stacy\Desktop\wdd330\GoatTrack\client\node_modules\@swc\helpers\_\_wrap_native_super\package.json133662478543100533 0
 94C:\Users\stacy\Desktop\wdd330\GoatTrack\client\node_modules\@swc\helpers\esm\_object_spread.js133662478541092371 0
@@ -865,7 +865,7 @@
 94C:\Users\stacy\Desktop\wdd330\GoatTrack\client\node_modules\caniuse-lite\data\features\ruby.js133662478545316815 0
 96C:\Users\stacy\Desktop\wdd330\GoatTrack\client\node_modules\caniuse-lite\data\features\stream.js133662478545608583 0
 87C:\Users\stacy\Desktop\wdd330\GoatTrack\client\node_modules\@parcel\workers\src\process133662478534696816 1
-84C:\Users\stacy\Desktop\wdd330\GoatTrack\client\dist\goat-profile-content.588a7743.js133662550168260242 0
+84C:\Users\stacy\Desktop\wdd330\GoatTrack\client\dist\goat-profile-content.588a7743.js133662558313897913 0
 92C:\Users\stacy\Desktop\wdd330\GoatTrack\client\node_modules\type-fest\source\promisable.d.ts133662478532268154 0
 98C:\Users\stacy\Desktop\wdd330\GoatTrack\client\node_modules\caniuse-lite\data\features\css-sel2.js133662478542096130 0
 104C:\Users\stacy\Desktop\wdd330\GoatTrack\client\node_modules\@swc\helpers\esm\_iterable_to_array_limit.js133662478540947251 0
@@ -1501,7 +1501,7 @@
 109C:\Users\stacy\Desktop\wdd330\GoatTrack\client\node_modules\@swc\helpers\_\_wrap_async_generator\package.json133662478543089876 0
 114C:\Users\stacy\Desktop\wdd330\GoatTrack\client\node_modules\react-refresh\cjs\react-refresh-runtime.development.js133662478525862160 0
 120C:\Users\stacy\Desktop\wdd330\GoatTrack\client\node_modules\csso\node_modules\css-tree\lib\syntax\node\MediaQueryList.js133662478541860305 0
-75C:\Users\stacy\Desktop\wdd330\GoatTrack\client\dist\goatfence.123dbca5.webp133662550166178234 0
+75C:\Users\stacy\Desktop\wdd330\GoatTrack\client\dist\goatfence.123dbca5.webp133662558313751602 0
 95C:\Users\stacy\Desktop\wdd330\GoatTrack\client\node_modules\@lmdb\lmdb-win32-x64\node.napi.node133662478540561838 0
 80C:\Users\stacy\Desktop\wdd330\GoatTrack\client\node_modules\msgpackr-extract\bin133662478520270735 1
 88C:\Users\stacy\Desktop\wdd330\GoatTrack\client\node_modules\htmlnano\docs\versioned_docs133662478537301041 1
@@ -1526,7 +1526,7 @@
 79C:\Users\stacy\Desktop\wdd330\GoatTrack\client\node_modules\picocolors\types.ts133662478521872719 0
 88C:\Users\stacy\Desktop\wdd330\GoatTrack\client\node_modules\posthtml-parser\package.json133662478522431731 0
 105C:\Users\stacy\Desktop\wdd330\GoatTrack\client\node_modules\@swc\helpers\cjs\_tagged_template_literal.cjs133662478538077384 0
-69C:\Users\stacy\Desktop\wdd330\GoatTrack\client\dist\home-content.html133662550168316118 0
+69C:\Users\stacy\Desktop\wdd330\GoatTrack\client\dist\home-content.html133662558315587491 0
 129C:\Users\stacy\Desktop\wdd330\GoatTrack\client\node_modules\@parcel\optimizer-svgo\node_modules\css-tree\lib\syntax\pseudo\not.js133662478538638446 0
 89C:\Users\stacy\Desktop\wdd330\GoatTrack\client\node_modules\posthtml-parser\dist\index.js133662478520749082 0
 93C:\Users\stacy\Desktop\wdd330\GoatTrack\client\node_modules\postcss-value-parser\lib\parse.js133662478519694632 0
@@ -1756,7 +1756,7 @@
 106C:\Users\stacy\Desktop\wdd330\GoatTrack\client\node_modules\caniuse-lite\data\features\web-app-manifest.js133662478546370859 0
 86C:\Users\stacy\Desktop\wdd330\GoatTrack\client\node_modules\@parcel\graph\lib\Graph.js133662478531546540 0
 88C:\Users\stacy\Desktop\wdd330\GoatTrack\client\node_modules\nth-check\lib\esm\compile.js133662478519751146 0
-73C:\Users\stacy\Desktop\wdd330\GoatTrack\client\dist\index.33ef1d56.js.map133662550168393429 0
+73C:\Users\stacy\Desktop\wdd330\GoatTrack\client\dist\index.33ef1d56.js.map133662558315153168 0
 81C:\Users\stacy\Desktop\wdd330\GoatTrack\client\node_modules\js-yaml\lib\dumper.js133662478523532726 0
 117C:\Users\stacy\Desktop\wdd330\GoatTrack\client\node_modules\@parcel\optimizer-htmlnano\node_modules\svgo\lib\types.ts133662478539142060 0
 80C:\Users\stacy\Desktop\wdd330\GoatTrack\client\node_modules\css-tree\lib\data.js133662478541286325 0
@@ -3047,7 +3047,7 @@
 105C:\Users\stacy\Desktop\wdd330\GoatTrack\client\node_modules\@swc\helpers\src\_interop_require_default.mjs133662478543537986 0
 112C:\Users\stacy\Desktop\wdd330\GoatTrack\client\node_modules\csso\node_modules\css-tree\cjs\syntax\node\Block.cjs133662478526772496 0
 82C:\Users\stacy\Desktop\wdd330\GoatTrack\client\node_modules\css-tree\lib\tokenizer133662478542506635 1
-77C:\Users\stacy\Desktop\wdd330\GoatTrack\client\dist\goat-profile-content.html133662550166415304 0
+77C:\Users\stacy\Desktop\wdd330\GoatTrack\client\dist\goat-profile-content.html133662558315587491 0
 115C:\Users\stacy\Desktop\wdd330\GoatTrack\client\node_modules\csso\node_modules\css-tree\cjs\syntax\node\Brackets.cjs133662478528341212 0
 106C:\Users\stacy\Desktop\wdd330\GoatTrack\client\node_modules\caniuse-lite\data\features\css-touch-action.js133662478542285989 0
 110C:\Users\stacy\Desktop\wdd330\GoatTrack\client\node_modules\csso\node_modules\css-tree\cjs\syntax\node\CDO.cjs133662478529133903 0
@@ -4021,7 +4021,7 @@
 91C:\Users\stacy\Desktop\wdd330\GoatTrack\client\node_modules\caniuse-lite\data\regions\PR.js133662478545046705 0
 91C:\Users\stacy\Desktop\wdd330\GoatTrack\client\node_modules\caniuse-lite\data\regions\PS.js133662478545114211 0
 95C:\Users\stacy\Desktop\wdd330\GoatTrack\client\node_modules\caniuse-lite\data\features\webgl.js133662478546414916 0
-81C:\Users\stacy\Desktop\wdd330\GoatTrack\client\dist\goat-data-content.2b283131.js133662549284262742 0
+81C:\Users\stacy\Desktop\wdd330\GoatTrack\client\dist\goat-data-content.2b283131.js133662572356380934 0
 91C:\Users\stacy\Desktop\wdd330\GoatTrack\client\node_modules\caniuse-lite\data\regions\PT.js133662478545115486 0
 84C:\Users\stacy\Desktop\wdd330\GoatTrack\client\node_modules\argparse\lib\textwrap.js133662478521479496 0
 91C:\Users\stacy\Desktop\wdd330\GoatTrack\client\node_modules\caniuse-lite\data\regions\RO.js133662478545287688 0
@@ -4032,7 +4032,7 @@
 103C:\Users\stacy\Desktop\wdd330\GoatTrack\client\node_modules\@parcel\runtime-service-worker\package.json133662478529057623 0
 91C:\Users\stacy\Desktop\wdd330\GoatTrack\client\node_modules\caniuse-lite\data\regions\SD.js133662478545379447 0
 91C:\Users\stacy\Desktop\wdd330\GoatTrack\client\node_modules\caniuse-lite\data\regions\SH.js133662478545469458 0
-91C:\Users\stacy\Desktop\wdd330\GoatTrack\client\dist\community-forum-content.20dbbb3d.js.map133662550166346075 0
+91C:\Users\stacy\Desktop\wdd330\GoatTrack\client\dist\community-forum-content.20dbbb3d.js.map133662558315094693 0
 91C:\Users\stacy\Desktop\wdd330\GoatTrack\client\node_modules\caniuse-lite\data\regions\SI.js133662478545495211 0
 105C:\Users\stacy\Desktop\wdd330\GoatTrack\client\node_modules\caniuse-lite\data\features\css-text-indent.js133662478542228374 0
 91C:\Users\stacy\Desktop\wdd330\GoatTrack\client\node_modules\caniuse-lite\data\regions\SK.js133662478545495211 0
@@ -4388,7 +4388,7 @@
 105C:\Users\stacy\Desktop\wdd330\GoatTrack\client\node_modules\caniuse-lite\data\features\permissions-api.js133662478544943113 0
 94C:\Users\stacy\Desktop\wdd330\GoatTrack\client\node_modules\caniuse-lite\data\features\ping.js133662478544986542 0
 112C:\Users\stacy\Desktop\wdd330\GoatTrack\client\node_modules\@swc\helpers\esm\_class_private_field_destructure.js133662478539937273 0
-72C:\Users\stacy\Desktop\wdd330\GoatTrack\client\dist\favicon.d2232a08.ico133662550167727152 0
+72C:\Users\stacy\Desktop\wdd330\GoatTrack\client\dist\favicon.d2232a08.ico133662558313751602 0
 99C:\Users\stacy\Desktop\wdd330\GoatTrack\client\node_modules\caniuse-lite\data\features\png-alpha.js133662478545016541 0
 102C:\Users\stacy\Desktop\wdd330\GoatTrack\client\node_modules\@parcel\workers\src\core-worker.browser.js133662478530622235 0
 94C:\Users\stacy\Desktop\wdd330\GoatTrack\client\node_modules\@parcel\core\src\RequestTracker.js133662478540927221 0
@@ -4734,7 +4734,7 @@
 96C:\Users\stacy\Desktop\wdd330\GoatTrack\client\node_modules\@swc\helpers\src\_async_iterator.mjs133662478543201594 0
 103C:\Users\stacy\Desktop\wdd330\GoatTrack\client\node_modules\@swc\helpers\src\_await_async_generator.mjs133662478543221592 0
 108C:\Users\stacy\Desktop\wdd330\GoatTrack\client\node_modules\@swc\helpers\src\_class_apply_descriptor_get.mjs133662478543242973 0
-91C:\Users\stacy\Desktop\wdd330\GoatTrack\client\dist\community-forum-content.be2aa262.js.map133662550168394187 0
+91C:\Users\stacy\Desktop\wdd330\GoatTrack\client\dist\community-forum-content.be2aa262.js.map133662558313953677 0
 128C:\Users\stacy\Desktop\wdd330\GoatTrack\client\node_modules\@parcel\optimizer-svgo\node_modules\svgo\plugins\convertTransform.js133662478533494696 0
 108C:\Users\stacy\Desktop\wdd330\GoatTrack\client\node_modules\@swc\helpers\src\_class_apply_descriptor_set.mjs133662478543247969 0
 56C:\Users\stacy\Desktop\wdd330\GoatTrack\client\.cache\ca133662467306374612 1
@@ -5294,7 +5294,7 @@
 91C:\Users\stacy\Desktop\wdd330\GoatTrack\client\node_modules\@parcel\package-manager\LICENSE133662478525934430 0
 96C:\Users\stacy\Desktop\wdd330\GoatTrack\client\node_modules\@parcel\package-manager\package.json133662478535856629 0
 56C:\Users\stacy\Desktop\wdd330\GoatTrack\client\.cache\67133662467304396210 1
-74C:\Users\stacy\Desktop\wdd330\GoatTrack\client\dist\lamancha.f36eda50.webp133662550168612442 0
+74C:\Users\stacy\Desktop\wdd330\GoatTrack\client\dist\lamancha.f36eda50.webp133662558315168574 0
 87C:\Users\stacy\Desktop\wdd330\GoatTrack\client\node_modules\@parcel\package-manager\src133662478535718418 1
 99C:\Users\stacy\Desktop\wdd330\GoatTrack\client\node_modules\@parcel\core\lib\dumpGraphToGraphViz.js133662478538001090 0
 121C:\Users\stacy\Desktop\wdd330\GoatTrack\client\node_modules\@parcel\package-manager\test\getCurrentPackageManager.test.js133662478528518732 0
@@ -5604,7 +5604,7 @@
 137C:\Users\stacy\Desktop\wdd330\GoatTrack\client\node_modules\@parcel\optimizer-htmlnano\node_modules\svgo\plugins\moveGroupAttrsToElems.js133662478535376027 0
 123C:\Users\stacy\Desktop\wdd330\GoatTrack\client\node_modules\@parcel\optimizer-htmlnano\node_modules\svgo\plugins\plugins.js133662478535804290 0
 130C:\Users\stacy\Desktop\wdd330\GoatTrack\client\node_modules\@parcel\optimizer-htmlnano\node_modules\svgo\plugins\preset-default.js133662478535978164 0
-69C:\Users\stacy\Desktop\wdd330\GoatTrack\client\dist\index.33ef1d56.js133662550168260242 0
+69C:\Users\stacy\Desktop\wdd330\GoatTrack\client\dist\index.33ef1d56.js133662558315007930 0
 127C:\Users\stacy\Desktop\wdd330\GoatTrack\client\node_modules\@parcel\optimizer-htmlnano\node_modules\svgo\plugins\removeAttrs.js133662478536130261 0
 132C:\Users\stacy\Desktop\wdd330\GoatTrack\client\node_modules\@parcel\optimizer-htmlnano\node_modules\svgo\plugins\removeDimensions.js133662478536304810 0
 129C:\Users\stacy\Desktop\wdd330\GoatTrack\client\node_modules\@parcel\optimizer-htmlnano\node_modules\svgo\plugins\removeDoctype.js133662478536413429 0
@@ -5936,7 +5936,7 @@
 94C:\Users\stacy\Desktop\wdd330\GoatTrack\client\node_modules\@parcel\core\src\InternalConfig.js133662478539142060 0
 94C:\Users\stacy\Desktop\wdd330\GoatTrack\client\node_modules\@parcel\core\src\PackagerRunner.js133662478539807480 0
 91C:\Users\stacy\Desktop\wdd330\GoatTrack\client\node_modules\@parcel\core\src\projectPath.js133662478540612323 0
-85C:\Users\stacy\Desktop\wdd330\GoatTrack\client\dist\goat-data-content.2b283131.js.map133662549284322541 0
+85C:\Users\stacy\Desktop\wdd330\GoatTrack\client\dist\goat-data-content.2b283131.js.map133662572356408049 0
 106C:\Users\stacy\Desktop\wdd330\GoatTrack\client\node_modules\@parcel\core\src\registerCoreWithSerializer.js133662478540771188 0
 94C:\Users\stacy\Desktop\wdd330\GoatTrack\client\node_modules\@parcel\core\src\resolveOptions.js133662478540984341 0
 90C:\Users\stacy\Desktop\wdd330\GoatTrack\client\node_modules\@parcel\core\src\serializer.js133662478541034294 0
@@ -5949,7 +5949,7 @@
 86C:\Users\stacy\Desktop\wdd330\GoatTrack\client\node_modules\@parcel\core\src\worker.js133662478541689956 0
 102C:\Users\stacy\Desktop\wdd330\GoatTrack\client\node_modules\@parcel\core\src\requests\ConfigRequest.js133662478537496876 0
 102C:\Users\stacy\Desktop\wdd330\GoatTrack\client\node_modules\@parcel\core\src\requests\TargetRequest.js133662478541364512 0
-87C:\Users\stacy\Desktop\wdd330\GoatTrack\client\dist\community-forum-content.20dbbb3d.js133662550166245080 0
+87C:\Users\stacy\Desktop\wdd330\GoatTrack\client\dist\community-forum-content.20dbbb3d.js133662558315007930 0
 106C:\Users\stacy\Desktop\wdd330\GoatTrack\client\node_modules\@parcel\core\src\requests\ValidationRequest.js133662478541661958 0
 98C:\Users\stacy\Desktop\wdd330\GoatTrack\client\node_modules\@parcel\core\src\public\BundleGroup.js133662478537123367 0
 105C:\Users\stacy\Desktop\wdd330\GoatTrack\client\node_modules\@parcel\core\src\public\MutableBundleGraph.js133662478539568727 0
@@ -6101,21 +6101,23 @@
 71C:\Users\stacy\Desktop\wdd330\GoatTrack\client\node_modules\.bin\parcel133662478634017779 0
 75C:\Users\stacy\Desktop\wdd330\GoatTrack\client\node_modules\.bin\semver.cmd133662478634017779 0
 73C:\Users\stacy\Desktop\wdd330\GoatTrack\client\node_modules\.bin\svgo.ps1133662478634017779 0
-87C:\Users\stacy\Desktop\wdd330\GoatTrack\client\dist\community-forum-content.be2aa262.js133662550168260242 0
-80C:\Users\stacy\Desktop\wdd330\GoatTrack\client\dist\community-forum-content.html133662550166415304 0
-81C:\Users\stacy\Desktop\wdd330\GoatTrack\client\dist\goat-data-content.2de55de2.js133662550166245080 0
-74C:\Users\stacy\Desktop\wdd330\GoatTrack\client\dist\goat-data-content.html133662550168363424 0
+87C:\Users\stacy\Desktop\wdd330\GoatTrack\client\dist\community-forum-content.be2aa262.js133662558313897913 0
+80C:\Users\stacy\Desktop\wdd330\GoatTrack\client\dist\community-forum-content.html133662558315587491 0
+81C:\Users\stacy\Desktop\wdd330\GoatTrack\client\dist\goat-data-content.2de55de2.js133662558315007930 0
+74C:\Users\stacy\Desktop\wdd330\GoatTrack\client\dist\goat-data-content.html133662563658113321 0
 74C:\Users\stacy\Desktop\wdd330\GoatTrack\client\dist\goatlogo.4ad6d8b1.webp133662476820850860 0
-74C:\Users\stacy\Desktop\wdd330\GoatTrack\client\dist\goatlogo.ae1190c6.webp133662550167820680 0
+74C:\Users\stacy\Desktop\wdd330\GoatTrack\client\dist\goatlogo.ae1190c6.webp133662558313751602 0
 70C:\Users\stacy\Desktop\wdd330\GoatTrack\client\dist\header.4485232e.js133662476824150157 0
-80C:\Users\stacy\Desktop\wdd330\GoatTrack\client\dist\home-content.f4cf57a8.js.map133662550166346075 0
-69C:\Users\stacy\Desktop\wdd330\GoatTrack\client\dist\index.07626ede.js133662550166245080 0
-73C:\Users\stacy\Desktop\wdd330\GoatTrack\client\dist\index.07626ede.js.map133662550166337576 0
-70C:\Users\stacy\Desktop\wdd330\GoatTrack\client\dist\index.c180ac0f.css133662550168363424 0
-74C:\Users\stacy\Desktop\wdd330\GoatTrack\client\dist\index.c180ac0f.css.map133662550168424436 0
-62C:\Users\stacy\Desktop\wdd330\GoatTrack\client\dist\index.html133662550166415304 0
-70C:\Users\stacy\Desktop\wdd330\GoatTrack\client\dist\public.0ba7c674.js133662550166245080 0
-74C:\Users\stacy\Desktop\wdd330\GoatTrack\client\dist\public.0ba7c674.js.map133662550166337576 0
+80C:\Users\stacy\Desktop\wdd330\GoatTrack\client\dist\home-content.f4cf57a8.js.map133662558313953677 0
+69C:\Users\stacy\Desktop\wdd330\GoatTrack\client\dist\index.07626ede.js133662558313897913 0
+73C:\Users\stacy\Desktop\wdd330\GoatTrack\client\dist\index.07626ede.js.map133662558313944387 0
+69C:\Users\stacy\Desktop\wdd330\GoatTrack\client\dist\index.2b283131.js133662556631665682 0
+73C:\Users\stacy\Desktop\wdd330\GoatTrack\client\dist\index.2b283131.js.map133662556631727793 0
+70C:\Users\stacy\Desktop\wdd330\GoatTrack\client\dist\index.c180ac0f.css133662558315624049 0
+74C:\Users\stacy\Desktop\wdd330\GoatTrack\client\dist\index.c180ac0f.css.map133662558315728418 0
+62C:\Users\stacy\Desktop\wdd330\GoatTrack\client\dist\index.html133662563518954367 0
+70C:\Users\stacy\Desktop\wdd330\GoatTrack\client\dist\public.0ba7c674.js133662558315007930 0
+74C:\Users\stacy\Desktop\wdd330\GoatTrack\client\dist\public.0ba7c674.js.map133662558315094693 0
 74C:\Users\stacy\Desktop\wdd330\GoatTrack\client\dist\router.4e4db399.js.map133662476824400765 0
 56C:\Users\stacy\Desktop\wdd330\GoatTrack\client\.cache\00133662467303644318 1
 56C:\Users\stacy\Desktop\wdd330\GoatTrack\client\.cache\01133662467303701433 1

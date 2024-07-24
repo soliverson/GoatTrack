@@ -1,9 +1,13 @@
 const express = require('express');
 const router = express.Router();
-const forumController = require('../controllers/forumController');
+const apiRoutes = require('./apiRoutes');
+const forumRoutes = require('./forumRoutes');
+const goatRoutes = require('./goatRoutes');
+const authRoutes = require('./authRoutes');
 
-router.get('/forum/posts', forumController.getPosts);
-router.post('/forum/posts', forumController.createPost);
-router.post('/forum/posts/:postId/replies', forumController.replyToPost);
+router.use('/api', apiRoutes);
+router.use('/forum', forumRoutes);
+router.use('/goats', goatRoutes);
+router.use('/auth', authRoutes);
 
 module.exports = router;

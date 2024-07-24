@@ -1,13 +1,15 @@
 const express = require('express');
-const { getAuthToken } = require('../auth');
 const router = express.Router();
+const { getBreedData } = require('../api');
 
-router.get('/token', async (req, res) => {
+router.get('/breeds', async (req, res) => {
     try {
-        const token = await getAuthToken();
-        res.json({ token });
+        const data = await getBreedData();
+        console.log('Fetched breed data:', data); // Log the fetched data
+        res.json(data);
     } catch (error) {
-        res.status(500).json({ error: 'Failed to get token' });
+        console.error('Error fetching breed data:', error);
+        res.status(500).json({ error: 'Failed to fetch breed data' });
     }
 });
 
