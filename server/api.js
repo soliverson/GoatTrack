@@ -1,17 +1,15 @@
 const axios = require('axios');
 require('dotenv').config();
 
-const getBreedData = async () => {
+const fetchGoatData = async () => {
     try {
         const response = await axios.get(process.env.REACT_APP_USDA_API_URL);
-        console.log('Fetched breed data:', response.data); // Log the response to ensure data is fetched
+        console.log('Fetched goat data:', response.data);
         return response.data;
     } catch (error) {
-        console.error('Error fetching breed data:', error);
+        console.error('Error fetching goat data:', error);
         throw error;
     }
 };
 
-module.exports = {
-    getBreedData,
-};
+module.exports = fetchGoatData;

@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', async function() {
     const typeSelect = document.getElementById('typeSelect');
     const stateSelectContainer = document.getElementById('stateSelectContainer');
     const stateSelect = document.getElementById('stateSelect');
@@ -13,45 +13,46 @@ document.addEventListener('DOMContentLoaded', function() {
     let data = [];
     let states = [];
 
+    const fetchGoatData = async () => {
+        try {
+            const response = await fetch('/api/goat-data');
+            const json = await response.json();
+            console.log('Fetched goat data:', json); // Add this line
+            return json;
+        } catch (error) {
+            console.error('API Error:', error);
+        }
+    };
+
     async function fetchData() {
         loading.style.display = 'block';
         errorDiv.style.display = 'none';
         dataContainer.style.display = 'none';
         try {
-            console.log('Fetching data from API...');
-            const response = await fetch('https://gisportal.ers.usda.gov/server/rest/services/Census_of_Agriculture_Data/Livestock_and_Animals_2017/MapServer/9/query?f=json&where=1=1&outFields=STATE_NAME,Name,y17_M119_valueText,y17_M119_classRange,y17_M120_valueText,y17_M120_classRange,y17_M121_valueText,y17_M121_classRange&returnGeometry=false');
-            const json = await response.json();
-            console.log('Raw API response:', json);
+            const json = await fetchGoatData();
+            if (json && json.features) {
+                data = json.features.map(feature => ({
+                    state: feature.attributes.STATE_NAME,
+                    county: feature.attributes.Name,
+                    allGoats: feature.attributes.y17_M119_valueText,
+                    allGoatsRange: feature.attributes.y17_M119_classRange,
+                    milkGoats: feature.attributes.y17_M120_valueText,
+                    milkGoatsRange: feature.attributes.y17_M120_classRange,
+                    meatGoats: feature.attributes.y17_M121_valueText,
+                    meatGoatsRange: feature.attributes.y17_M121_classRange,
+                }));
 
-            if (!json.features) {
-                throw new Error('No features found in the API response');
+                states = [...new Set(data.map(item => item.state))];
+                stateSelect.innerHTML = '<option value="">Select State</option>';
+                states.forEach(state => {
+                    const option = document.createElement('option');
+                    option.value = state;
+                    option.textContent = state;
+                    stateSelect.appendChild(option);
+                });
+            } else {
+                console.error('No data received');
             }
-
-            data = json.features.map(feature => ({
-                state: feature.attributes.STATE_NAME,
-                county: feature.attributes.Name,
-                allGoats: feature.attributes.y17_M119_valueText,
-                allGoatsRange: feature.attributes.y17_M119_classRange,
-                milkGoats: feature.attributes.y17_M120_valueText,
-                milkGoatsRange: feature.attributes.y17_M120_classRange,
-                meatGoats: feature.attributes.y17_M121_valueText,
-                meatGoatsRange: feature.attributes.y17_M121_classRange,
-            }));
-
-            console.log('Processed data:', data);
-
-            states = [...new Set(data.map(item => item.state))];
-
-            console.log('Unique states:', states);
-
-            stateSelect.innerHTML = '<option value="">Select State</option>';
-            states.forEach(state => {
-                const option = document.createElement('option');
-                option.value = state;
-                option.textContent = state;
-                stateSelect.appendChild(option);
-            });
-
             loading.style.display = 'none';
         } catch (error) {
             loading.style.display = 'none';
@@ -62,7 +63,6 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     typeSelect.addEventListener('change', function() {
-        console.log('Type selected:', typeSelect.value);
         const selectedType = typeSelect.value;
         stateSelectContainer.style.display = selectedType ? 'block' : 'none';
         stateSelect.value = '';
@@ -71,7 +71,6 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     stateSelect.addEventListener('change', function() {
-        console.log('State selected:', stateSelect.value);
         const selectedType = typeSelect.value;
         const selectedState = stateSelect.value;
         const filteredData = data.filter(item => item.state === selectedState && (selectedType === 'all' || (selectedType === 'dairy' && item.milkGoats) || (selectedType === 'meat' && item.meatGoats)));
@@ -87,8 +86,6 @@ document.addEventListener('DOMContentLoaded', function() {
             typeHeader2.textContent = 'Range';
         }
 
-        console.log('Filtered data:', filteredData);
-
         dataBody.innerHTML = filteredData.map(item => `
             <tr>
                 <td>${item.state}</td>
@@ -102,5 +99,5 @@ document.addEventListener('DOMContentLoaded', function() {
         dataContainer.style.display = 'block';
     });
 
-    fetchData();
+    await fetchData();
 });
