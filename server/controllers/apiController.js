@@ -4,7 +4,7 @@ require('dotenv').config();
 exports.getGoatData = async (req, res) => {
     try {
         console.log('Fetching goat data...');
-        const response = await axios.get(process.env.USDA_API_URL + '/query', {
+        const response = await axios.get(`${process.env.USDA_API_URL}/query`, {
             params: {
                 f: 'json',
                 where: '1=1',
