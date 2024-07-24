@@ -11,6 +11,7 @@ router.get('/goat-breeds', async (req, res) => {
         });
         res.json(response.data);
     } catch (error) {
+        console.error('Error fetching breed information:', error);
         res.status(500).json({ message: 'Error fetching breed information', error });
     }
 });
