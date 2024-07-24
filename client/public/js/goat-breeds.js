@@ -13,6 +13,7 @@ document.addEventListener('DOMContentLoaded', async function() {
                 throw new Error('Network response was not ok');
             }
             const breeds = await response.json();
+            console.log('Fetched breeds:', breeds);
             return breeds;
         } catch (error) {
             console.error('API Error:', error);
