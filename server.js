@@ -2,7 +2,6 @@ const express = require('express');
 const { createProxyMiddleware } = require('http-proxy-middleware');
 const path = require('path');
 
-// Create Express server
 const app = express();
 
 // Serve static files from the client directory
