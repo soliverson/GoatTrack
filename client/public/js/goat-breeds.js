@@ -33,19 +33,30 @@ document.addEventListener('DOMContentLoaded', async function() {
                 breedSelect.appendChild(option);
             });
         } catch (error) {
-            errorDiv.textContent = 'Failed to load breeds';
+            errorDiv.textContent = 'Error loading breeds';
             errorDiv.classList.remove('hidden');
         }
     };
 
     breedSelect.addEventListener('change', async function() {
         const selectedBreed = breedSelect.value;
-        if (selectedBreed) {
-            const breedInfo = await fetch(`/api/goat-breeds/${selectedBreed}`);
-            const data = await breedInfo.json();
+        if (!selectedBreed) return;
+
+        loading.classList.remove('hidden');
+        try {
+            const response = await fetch(`/api/goat-breeds/${selectedBreed}`);
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            const data = await response.json();
             breedTitle.textContent = data.name;
             breedDescription.textContent = data.characteristics;
             dataContainer.classList.remove('hidden');
+        } catch (error) {
+            errorDiv.textContent = 'Error loading breed data';
+            errorDiv.classList.remove('hidden');
+        } finally {
+            loading.classList.add('hidden');
         }
     });
 
