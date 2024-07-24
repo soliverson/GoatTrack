@@ -3,7 +3,7 @@ const app = express();
 const path = require('path');
 require('dotenv').config();
 
-const apiRoutes = require('./routes/apiRoutes'); // Adjust the path if needed
+const apiRoutes = require('./routes/apiRoutes');
 
 app.use(express.static(path.join(__dirname, 'client', 'public')));
 app.use('/api', apiRoutes);
