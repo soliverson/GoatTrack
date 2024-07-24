@@ -1,17 +1,20 @@
-const axios = require('axios');
-require('dotenv').config();
+async function fetchGoatData() {
+  try {
+    const response = await fetch('https://api.api-ninjas.com/v1/animals?name=goat', {
+      headers: {
+        'X-Api-Key': process.env.API_NINJAS_KEY
+      }
+    });
 
-const fetchGoatBreeds = async () => {
-    try {
-        const response = await axios.get(process.env.API_NINJAS_URL, {
-            headers: { 'X-Api-Key': process.env.API_NINJAS_KEY }
-        });
-        console.log('Fetched goat data:', response.data);
-        return response.data;
-    } catch (error) {
-        console.error('Error fetching goat data:', error);
-        throw error;
+    if (!response.ok) {
+      throw new Error(`API Error: ${response.status} ${response.statusText}`);
     }
-};
 
-module.exports = fetchGoatBreeds;
+    const data = await response.json();
+    console.log(data);
+    // Process the JSON data
+  } catch (error) {
+    console.error('Fetch Error:', error);
+    // Handle the error (e.g., show a user-friendly message)
+  }
+}
