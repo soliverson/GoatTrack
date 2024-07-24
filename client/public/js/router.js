@@ -13,10 +13,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const router = async () => {
     const routes = [
-      { path: "/", view: () => loadHTMLContent("home-content.html") },
-      { path: "/goat-data", view: () => loadHTMLContent("goat-data.html") },
-      { path: "/goat-profile", view: () => loadHTMLContent("goat-profile-content.html") },
-      { path: "/community-forum", view: () => loadHTMLContent("community-forum-content.html") }
+      { path: "/", view: () => loadHTMLContent("/home.html") },
+      { path: "/goat-data", view: () => loadHTMLContent("/goat-data.html") },
+      { path: "/goat-profile", view: () => loadHTMLContent("/goat-profile.html") },
+      { path: "/community-forum", view: () => loadHTMLContent("/community-forum.html") }
     ];
 
     const potentialMatches = routes.map(route => ({
