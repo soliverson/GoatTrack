@@ -1,42 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Goat Breeds</title>
-  <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-  <header id="header">
-    <img src="images/goatlogo.webp" alt="GoatTrack Logo" class="logo">
-    <nav>
-      <ul>
-        <li><a href="/" data-link>Home</a></li>
-        <li><a href="/goat-data" data-link>Goat Data</a></li>
-        <li><a href="/goat-profile" data-link>Goat Profile</a></li>
-        <li><a href="/community-forum" data-link>Community Forum</a></li>
-        <li><a href="/goat-breeds" data-link>Goat Breeds</a></li>
-      </ul>
-    </nav>
-  </header>
-  <main id="main-content">
-    <div class="content">
-      <h1>Goat Breeds</h1>
-      <label for="breedSelect">Select breed:</label>
-      <select id="breedSelect" class="large-select">
-        <option value="">Select Breed</option>
-      </select>
-      <div id="loading" class="hidden">Loading...</div>
-      <div id="error" class="hidden"></div>
-      <div id="dataContainer" class="hidden">
-        <h2 id="breedTitle"></h2>
-        <p id="breedDescription"></p>
-      </div>
-    </div>
-  </main>
-  <footer>
-    <p>&copy; 2024 GoatTrack. All rights reserved.</p>
-  </footer>
-  <script src="js/goat-breeds.js"></script>
-</body>
-</html>
+<div class="content">
+  <h1>Goat Breeds</h1>
+  <label for="breedSelect">Select breed:</label>
+  <select id="breedSelect" class="large-select">
+    <option value="">Select Breed</option>
+  </select>
+  <div id="loading" class="hidden">Loading...</div>
+  <div id="error" class="hidden"></div>
+  <div id="dataContainer" class="hidden">
+    <h2 id="breedTitle"></h2>
+    <p id="breedDescription"></p>
+  </div>
+</div>
+<script src="js/goat-breeds.js"></script>
