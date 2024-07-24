@@ -39,16 +39,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 throw new Error('Network response was not ok ' + response.statusText);
             }
             
-            const text = await response.text();
-            console.log('Response text:', text);
-            
-            let data;
-            try {
-                data = JSON.parse(text);
-                console.log('Fetched goat data:', data);
-            } catch (e) {
-                throw new Error('API Error: ' + e.message);
-            }
+            const data = await response.json();
+            console.log('Fetched goat data:', data);
             
             if (!data.features || data.features.length === 0) {
                 throw new Error('No data received');
