@@ -13,10 +13,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const router = async () => {
       const routes = [
-          { path: "/home-content.html", view: () => loadHTMLContent("/home-content.html") },
-          { path: "/goat-data.html", view: () => loadHTMLContent("/goat-data.html") },
-          { path: "/goat-profile-content.html", view: () => loadHTMLContent("/goat-profile-content.html") },
-          { path: "/community-forum-content.html", view: () => loadHTMLContent("/community-forum-content.html") }
+          { path: "/", view: () => loadHTMLContent("/home-content.html") },
+          { path: "/goat-data", view: () => loadHTMLContent("/goat-data.html") },
+          { path: "/goat-profile-content", view: () => loadHTMLContent("/goat-profile-content.html") },
+          { path: "/community-forum-content", view: () => loadHTMLContent("/community-forum-content.html") }
       ];
 
       const potentialMatches = routes.map(route => ({
@@ -30,14 +30,18 @@ document.addEventListener('DOMContentLoaded', () => {
           match = { route: routes[0], isMatch: true };
       }
 
-      match.route.view();
+      await match.route.view();
   };
 
   const loadHTMLContent = async (url) => {
       const mainContent = document.getElementById('main-content');
       const response = await fetch(url);
-      const data = await response.text();
-      mainContent.innerHTML = data;
+      if (response.ok) {
+          const data = await response.text();
+          mainContent.innerHTML = data;
+      } else {
+          mainContent.innerHTML = "<h1>404 - Page Not Found</h1>";
+      }
   };
 
   window.addEventListener('popstate', router);
