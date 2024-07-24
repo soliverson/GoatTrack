@@ -13,10 +13,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const router = async () => {
     const routes = [
-      { path: "/", view: () => loadHTMLContent("home.html") },
-      { path: "/goat-data", view: () => loadHTMLContent("goat-data.html") },
-      { path: "/goat-profile", view: () => loadHTMLContent("goat-profile.html") },
-      { path: "/community-forum", view: () => loadHTMLContent("community-forum.html") }
+      { path: "/", view: () => loadHTMLContent("/home.html") },
+      { path: "/goat-data", view: () => loadHTMLContent("/goat-data.html") },
+      { path: "/goat-profile", view: () => loadHTMLContent("/goat-profile.html") },
+      { path: "/community-forum", view: () => loadHTMLContent("/community-forum.html") }
     ];
 
     const potentialMatches = routes.map(route => ({
@@ -36,10 +36,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const loadHTMLContent = async (url) => {
     const mainContent = document.getElementById('main-content');
     const response = await fetch(url);
-    if (!response.ok) {
-      mainContent.innerHTML = '<h2>Error loading page</h2>';
-      return;
-    }
     const data = await response.text();
     mainContent.innerHTML = data;
   };
