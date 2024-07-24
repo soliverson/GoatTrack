@@ -9,8 +9,9 @@ document.addEventListener('DOMContentLoaded', async () => {
     try {
       loading.classList.remove('hidden');
       const response = await fetch('/api/goat-breeds');
+      if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
       const data = await response.json();
-      
+  
       data.forEach(breed => {
         const option = document.createElement('option');
         option.value = breed.name;
@@ -28,7 +29,7 @@ document.addEventListener('DOMContentLoaded', async () => {
       });
   
     } catch (err) {
-      error.textContent = `API Error: ${err}`;
+      error.textContent = `API Error: ${err.message}`;
       error.classList.remove('hidden');
     } finally {
       loading.classList.add('hidden');
